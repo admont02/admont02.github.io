@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f3f3f3;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* ------------------------- */
+/* HEADER */
+/* ------------------------- */
+
+header {
+    padding: 40px 0;
+}
+
+header .logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header .logo p {
+    color: #9B9B9B;
+}
+
+header form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+header .barra-busqueda {
+    width: 70%;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    padding: 0 20px;
+    border-radius: 100px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+header .categorias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+header .categorias a {
+    color: #9B9B9B;
+    margin: 10px 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+header .categorias a.activo {
+    color: #000;
+}
+
+/* ------------------------- */
+/* Grid */
+/* ------------------------- */
+
+.grid {
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s linear 1s;
+}
+
+.grid.imagenes-cargadas {
+    opacity: 1;
+}
+
+.grid .item {
+    position: absolute;
+    display: block;
+    padding: 0;
+    margin: 10px;
+    width: calc(33.333333% - 20px);
+}
+
+.grid .item-contenido {
+    position: relative;
+}
+
+
+.grid .item img {
+    width: 100%;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+/* ------------------------- */
+/* Sobre mí */
+/* ------------------------- */
+.sobre-mi {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.sobre-mi h2 {
+    margin-bottom: 20px;
+}
+
+.sobre-mi p {
+    max-width: 600px;
+    margin: auto;
+    font-size: 24px;
+    color: #333;
+}
+
+/* ------------------------- */
+/* Contacto */
+/* ------------------------- */
+.contacto {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.contacto p {
+    max-width: 600px;
+    margin: auto;
+    font-size: 24px;
+    color: #333;
+}
+
+.contacto a {
+    color: #1a73e8;
+}
+
+.contacto a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------------- */
+/* Footer */
+/* ------------------------- */
+footer .redes-sociales {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+footer .redes-sociales a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #000;
+    color: #fff;
+    margin: 20px;
+    text-align: center;
+    border-radius: 100px;
+    transition: .3s ease all;
+    font-size: 24px; /* Ajusta el tamaño del icono */
+}
+
+footer .redes-sociales .twitter {
+    background: #1da1f2;
+}
+
+footer .redes-sociales .linkedin {
+    background: #0077B5;
+}
+
+footer .redes-sociales .github {
+    background: #181717;
+}
+
+footer .redes-sociales a:hover {
+    animation: icono .5s ease;
+}
+
+@keyframes icono {
+    from {
+        transform: rotate3d(0, 0, 0, 0);
+    }
+
+    to {
+        transform: rotate3d(0, 1, 0, 360deg);
+    }
+}
+
+footer .creado-por {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #c13584;
+}
+
+footer .creado-por a {
+    color: #000;
+}
+
+footer .creado-por a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------------- */
+/* Mediaqueries */
+/* ------------------------- */
+@media screen and (max-width: 700px) {
+    .grid .item {
+        width: calc(50% - 20px);
+    }
+
+    header .barra-busqueda {
+        width: 100%;
+    }
+}
