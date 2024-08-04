@@ -227,3 +227,20 @@ footer .creado-por a:hover {
         width: 100%;
     }
 }
+.idiomas {
+    margin: 20px 0;
+}
+
+.idiomas button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.idiomas button:hover {
+    background-color: #0056b3;
+}
+

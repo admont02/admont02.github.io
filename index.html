@@ -1,96 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
-	<script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
-    <!-- Enlace a Font Awesome -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-	<link rel="stylesheet" href="estilos.css">
-	<title>Portfolio Dinámico - Adrián Montero</title>
+    <link rel="stylesheet" href="estilos.css">
+    <title>Portfolio Dinámico - Adrián Montero</title>
 </head>
 <body>
-	
-	<div class="contenedor">
-		<header>
-			<div class="logo">
-				<h1>Adrián Montero</h1>
-				<p>Desarrollador de videojuegos</p>
-			</div>
-			<form action="">
-				<input type="text" class="barra-busqueda" id="barra-busqueda" placeholder="Buscar">
-			</form>
-			<div class="categorias" id="categorias">
-				<a href="#" class="activo" data-categoria="proyectos">Proyectos</a>
-				<a href="#" data-categoria="sobre-mi">Sobre mí</a>
-				<a href="#" data-categoria="contacto">Contacto</a>
-			</div>
-		</header>
-
-		<div class="contenido" id="contenido">
-			<div class="grid" id="grid">
-				<div class="item"
-					 data-categoria="proyectos"
-					 data-etiquetas="videojuegos desarrollo"
-					 data-descripcion="1.- Desarrollo de un videojuego en Unity. Aquí puedes ver un video del proyecto."
-					 data-enlace="https://www.youtube.com/embed/VIDEO_ID"
-				>
-					<div class="item-contenido">
-						<img src="img/animal1.png" alt="">
-					</div>
-				</div>
-
-				<div class="item"
-					 data-categoria="proyectos"
-					 data-etiquetas="aplicaciones móviles"
-					 data-descripcion="2.- Aplicación móvil para gestión de tareas. Aquí puedes ver una demo del proyecto."
-					 data-enlace="https://www.youtube.com/embed/VIDEO_ID"
-				>
-					<div class="item-contenido">
-						<img src="img/animal1.png" alt="">
-					</div>
-				</div>
-
-				<!-- Más proyectos pueden ser añadidos aquí -->
-
-			</div>
-
-			<div class="sobre-mi" id="sobre-mi" style="display: none;">
-				<h2>Sobre mí</h2>
-				<p>Hola, soy Adrián Montero, un desarrollador de videojuegos con experiencia en la creación de proyectos innovadores y desafiantes. Me apasiona el diseño de juegos y el desarrollo de nuevas tecnologías. Aquí puedes conocer más sobre mi carrera y mis habilidades.</p>
-			</div>
-
-			<div class="contacto" id="contacto" style="display: none;">
-				<p>Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a href="mailto:adrimonteroc@gmail.com">adrimonteroc@gmail.com</a>. También puedes conectar conmigo a través de <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/" target="_blank">LinkedIn</a>.</p>
+    <div class="contenedor">
+        <header>
+            <div class="idiomas">
+                <button id="btn-es"><img src="path/to/spanish-flag.png" alt="Español" title="Español"></button>
+                <button id="btn-en"><img src="path/to/english-flag.png" alt="English" title="English"></button>
             </div>
-		</div>
+            <div class="logo">
+                <h1 id="logo-text">Adrián Montero</h1>
+                <p id="description-text">Desarrollador de videojuegos</p>
+            </div>
+            <form action="">
+                <input type="text" class="barra-busqueda" id="barra-busqueda" placeholder="Buscar">
+            </form>
+            <div class="categorias" id="categorias">
+                <a href="#" class="activo" data-categoria="proyectos" id="proyectos-link">Proyectos</a>
+                <a href="#" data-categoria="sobre-mi" id="sobre-mi-link">Sobre mí</a>
+                <a href="#" data-categoria="contacto" id="contacto-link">Contacto</a>
+            </div>
+        </header>
 
-		<footer class="contenedor">
-			<div class="redes-sociales">
-				<div class="contenedor-icono">
-					<a href="http://www.twitter.com/falconmasters" target="_blank" class="twitter">
-						<i class="fab fa-twitter"></i>
-					</a>
-				</div>
-				<div class="contenedor-icono">
-					<a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/" target="_blank" class="linkedin">
-						<i class="fab fa-linkedin"></i>
-					</a>
-				</div>
-				<div class="contenedor-icono">
-					<a href="https://github.com/admont02" target="_blank" class="github">
-						<i class="fab fa-github"></i>
-					</a>
-				</div>
-			</div>
-		</footer>
-	</div>
+        <div class="contenido" id="contenido">
+            <div class="grid" id="grid">
+                <!-- Proyectos aquí -->
+            </div>
 
-	<script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
-	<script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
-	<script src="main.js"></script>
+            <div class="sobre-mi" id="sobre-mi" style="display: none;">
+                <h2 id="sobre-mi-title">Sobre mí</h2>
+                <p id="sobre-mi-text">Hola, soy Adrián Montero, un desarrollador de videojuegos con experiencia en la creación de proyectos innovadores y desafiantes. Me apasiona el diseño de juegos y el desarrollo de nuevas tecnologías. Aquí puedes conocer más sobre mi carrera y mis habilidades.</p>
+            </div>
+
+            <div class="contacto" id="contacto" style="display: none;">
+                <p id="contacto-text">Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a href="mailto:adrimonteroc@gmail.com">adrimonteroc@gmail.com</a>. También puedes conectar conmigo a través de <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/" target="_blank">LinkedIn</a>.</p>
+            </div>
+        </div>
+
+        <footer class="contenedor">
+            <div class="redes-sociales">
+                <div class="contenedor-icono">
+                    <a href="http://www.twitter.com/falconmasters" target="_blank" class="twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                <div class="contenedor-icono">
+                    <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/" target="_blank" class="linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="contenedor-icono">
+                    <a href="https://github.com/admont02" target="_blank" class="github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
+    <script src="main.js"></script>
+    <script src="traduccion.js"></script> <!-- Archivo de traducción -->
 </body>
 </html>
