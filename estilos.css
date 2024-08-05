@@ -35,6 +35,41 @@ header .logo {
 header .logo p {
     color: #9B9B9B;
 }
+header .redes-sociales-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+header .redes-sociales-header a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #000;
+    color: #fff;
+    margin: 0 10px;
+    border-radius: 100%;
+    transition: .3s ease all;
+    font-size: 18px;
+}
+
+header .redes-sociales-header .twitter {
+    background: #1da1f2;
+}
+
+header .redes-sociales-header .linkedin {
+    background: #0077B5;
+}
+
+header .redes-sociales-header .github {
+    background: #181717;
+}
+
+header .redes-sociales-header a:hover {
+    animation: icono .5s ease;
+}
 
 header form {
     width: 100%;
@@ -148,48 +183,6 @@ header .categorias a.activo {
     text-decoration: underline;
 }
 
-/* ------------------------- */
-/* Footer */
-/* ------------------------- */
-footer .redes-sociales {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    padding: 20px;
-    flex-wrap: wrap;
-}
-
-footer .redes-sociales a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    background: #000;
-    color: #fff;
-    margin: 20px;
-    text-align: center;
-    border-radius: 100px;
-    transition: .3s ease all;
-    font-size: 24px; /* Ajusta el tamaño del icono */
-}
-
-footer .redes-sociales .twitter {
-    background: #1da1f2;
-}
-
-footer .redes-sociales .linkedin {
-    background: #0077B5;
-}
-
-footer .redes-sociales .github {
-    background: #181717;
-}
-
-footer .redes-sociales a:hover {
-    animation: icono .5s ease;
-}
-
 @keyframes icono {
     from {
         transform: rotate3d(0, 0, 0, 0);
@@ -227,20 +220,117 @@ footer .creado-por a:hover {
         width: 100%;
     }
 }
+/* Contenedor de idiomas */
 .idiomas {
-    margin: 20px 0;
+    position: absolute;
+    top: 10px; /* Ajusta el valor según el espacio que desees desde la parte superior */
+    left: 10px; /* Ajusta el valor según el espacio que desees desde la izquierda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
+/* Estilos de los botones */
 .idiomas button {
-    background-color: #007BFF;
-    color: #fff;
+    background-color: transparent; /* Fondo transparente para resaltar solo la imagen */
     border: none;
-    padding: 10px 20px;
-    margin-right: 10px;
+    margin: 0 5px; /* Espacio horizontal entre las banderas */
     cursor: pointer;
+    padding: 5px; /* Espacio alrededor de la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.idiomas button img {
+    width: 24px; /* Tamaño de la bandera */
+    height: auto; /* Mantiene la proporción de aspecto */
 }
 
 .idiomas button:hover {
-    background-color: #0056b3;
+    transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+}
+
+.idiomas button:focus {
+    outline: none; /* Elimina el borde de enfoque predeterminado */
+}
+
+
+/* ------------------------- */
+/* Grid de Proyectos */
+/* ------------------------- */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid .item {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+.grid .item:hover {
+    transform: scale(1.05);
+}
+
+.grid .item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.grid .item-info {
+    padding: 15px;
+}
+
+.grid .item-info h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.grid .item-info p {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.grid .item-info .trailer-link,
+.grid .item-info .proyecto-link {
+    display: inline-block;
+    margin-right: 10px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.grid .item-info .trailer-link:hover,
+.grid .item-info .proyecto-link:hover {
+    text-decoration: underline;
+}
+
+.grid .item-info .proyecto-link {
+    background: #e0e0e0;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: #333;
+}
+
+/* ------------------------- */
+/* Mediaqueries */
+/* ------------------------- */
+
+@media screen and (max-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
 

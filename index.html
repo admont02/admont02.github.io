@@ -14,16 +14,24 @@
     <div class="contenedor">
         <header>
             <div class="idiomas">
-                <button id="btn-es"><img src="path/to/spanish-flag.png" alt="Español" title="Español"></button>
-                <button id="btn-en"><img src="path/to/english-flag.png" alt="English" title="English"></button>
+                <button id="btn-es"><img src="/img/espana.png" alt="Español" title="Español"></button>
+                <button id="btn-en"><img src="/img/uk.png" alt="English" title="English"></button>
             </div>
             <div class="logo">
                 <h1 id="logo-text">Adrián Montero</h1>
                 <p id="description-text">Desarrollador de videojuegos</p>
             </div>
-            <form action="">
-                <input type="text" class="barra-busqueda" id="barra-busqueda" placeholder="Buscar">
-            </form>
+            <div class="redes-sociales-header">
+                <a href="http://www.twitter.com/falconmasters" target="_blank" class="twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/" target="_blank" class="linkedin">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/admont02" target="_blank" class="github">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
             <div class="categorias" id="categorias">
                 <a href="#" class="activo" data-categoria="proyectos" id="proyectos-link">Proyectos</a>
                 <a href="#" data-categoria="sobre-mi" id="sobre-mi-link">Sobre mí</a>
@@ -33,38 +41,44 @@
 
         <div class="contenido" id="contenido">
             <div class="grid" id="grid">
-                <!-- Proyectos aquí -->
+                <!-- Proyecto 1 -->
+                <div class="item">
+                    <div class="item-contenido">
+                        <img src="path/to/project-image1.jpg" alt="Proyecto 1">
+                        <div class="item-info">
+                            <h3>Proyecto 1</h3>
+                            <p>Descripción breve del proyecto 1. Explica qué es, sus características y su objetivo.</p>
+                            <a href="link-al-trailer1" class="trailer-link" target="_blank">Ver Tráiler</a>
+                            <a href="link-al-proyecto1" class="proyecto-link" target="_blank">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Proyecto 2 -->
+                <div class="item">
+                    <div class="item-contenido">
+                        <img src="path/to/project-image2.jpg" alt="Proyecto 2">
+                        <div class="item-info">
+                            <h3>Proyecto 2</h3>
+                            <p>Descripción breve del proyecto 2. Explica qué es, sus características y su objetivo.</p>
+                            <a href="link-al-trailer2" class="trailer-link" target="_blank">Ver Tráiler</a>
+                            <a href="link-al-proyecto2" class="proyecto-link" target="_blank">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Añade más proyectos aquí -->
             </div>
-
+        
             <div class="sobre-mi" id="sobre-mi" style="display: none;">
-                <h2 id="sobre-mi-title">Sobre mí</h2>
                 <p id="sobre-mi-text">Hola, soy Adrián Montero, un desarrollador de videojuegos con experiencia en la creación de proyectos innovadores y desafiantes. Me apasiona el diseño de juegos y el desarrollo de nuevas tecnologías. Aquí puedes conocer más sobre mi carrera y mis habilidades.</p>
             </div>
-
+        
             <div class="contacto" id="contacto" style="display: none;">
                 <p id="contacto-text">Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a href="mailto:adrimonteroc@gmail.com">adrimonteroc@gmail.com</a>. También puedes conectar conmigo a través de <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/" target="_blank">LinkedIn</a>.</p>
             </div>
         </div>
-
-        <footer class="contenedor">
-            <div class="redes-sociales">
-                <div class="contenedor-icono">
-                    <a href="http://www.twitter.com/falconmasters" target="_blank" class="twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </div>
-                <div class="contenedor-icono">
-                    <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/" target="_blank" class="linkedin">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </div>
-                <div class="contenedor-icono">
-                    <a href="https://github.com/admont02" target="_blank" class="github">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-        </footer>
+        
     </div>
 
     <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
