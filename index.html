@@ -15,12 +15,13 @@
 <body>
     <div class="contenedor">
         <header>
-            <div class="idiomas">
+            <!-- <div class="idiomas">
                 <button id="btn-es"><img src="/img/espana.png" alt="Español" title="Español"></button>
                 <button id="btn-en"><img src="/img/uk.png" alt="English" title="English"></button>
-            </div>
+            </div> -->
             <div class="logo">
                 <h1 id="logo-text">Adrián Montero</h1>
+                <h3>adrimonteroc@gmail.com</h3>
                 <p id="description-text">Desarrollador de videojuegos</p>
             </div>
             <div class="redes-sociales-header">
@@ -32,17 +33,72 @@
                     <i class="fab fa-github"></i>
                 </a>
             </div>
-            <div class="categorias" id="categorias">
-                <a href="#" class="activo" data-categoria="proyectos" id="proyectos-link">Proyectos</a>
-                <a href="#" data-categoria="sobre-mi" id="sobre-mi-link">Sobre mí</a>
-                <a href="#" data-categoria="contacto" id="contacto-link">Contacto</a>
-            </div>
+            <div class="grid" id="grid">
+                <div class="grid" id="grid">
+                    <div class="texto-arriba">
+                        <p>¡Hola! Soy Adrián, un apasionado desarrollador de videojuegos buscando una oportunidad en la
+                            industria.
+                        </p>
+
+                        <p>Tengo experiencia especialmente con <strong>Unity</strong>, pero también he trabajado con
+                            <strong>Unreal Engine</strong> en varios proyectos. Además, he tenido la oportunidad de
+                            trabajar durante 6 meses en un proyecto de <strong>Realidad Virtual (VR)</strong>, lo que me
+                            ha permitido mejorar mi conocimiento en este ámbito. También
+                            tengo experiencia con <strong>Phaser</strong> y <strong>SDL</strong>, herramientas que he
+                            utilizado para crear juegos 2D y desarrollar mecánicas interactivas.
+                        </p>
+
+
+                        <p>Mi experiencia también se extiende al uso de <strong>Blender</strong>, donde he modelado y
+                            animado personajes, objetos y entornos 3D, dándoles vida a través de texturas y animaciones
+                            que mejoran la experiencia de usuario. (Aunque prefiero programar!)</p>
+
+                        <p>Estoy constantemente tratando de aprender cosas nuevas y mejorando mis habilidades. Me
+                            considero una persona que trabaja bien en equipo y bajo presión.</p>
+
+                        <p>Aquí puedes ver algunos de los proyectos en los que he trabajado. ¡Haz clic en
+                            ellos para conocer más!</p>
+                    </div>
+                </div>
         </header>
 
-        <div class="grid" id="grid"></div>
         <div class="grid" id="grid">
-            <!-- Proyecto 1 -->
+            <div class="sobre-mi" id="sobre-mi" style="display: none;">
+                <p id="sobre-mi-text">Hola, soy Adrián Montero, un desarrollador de videojuegos con experiencia en la
+                    creación de proyectos innovadores y desafiantes. Me apasiona el diseño de juegos y el desarrollo de
+                    nuevas tecnologías. Aquí puedes conocer más sobre mi carrera y mis habilidades.</p>
+            </div>
 
+            <div class="contacto" id="contacto" style="display: none;">
+                <p id="contacto-text">Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a
+                        href="mailto:adrimonteroc@gmail.com">adrimonteroc@gmail.com</a>. También puedes conectar conmigo
+                    a
+                    través de <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/"
+                        target="_blank">LinkedIn</a>.</p>
+            </div>
+        </div>
+        <div class="grid" id="grid">
+            <div class="grid" id="grid">
+
+            </div>
+
+            <!-- Proyecto 1 -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped');">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/vr.png" alt="Proyecto 1">
+                        <h3>Juego en RV durante mi estancia en ViewNext</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="back-text">Durante mi estancia de 6 meses en ViewNext trabajé en un proyecto que
+                            consistió en un juego Endless-Runner/Rogue-Like en Realidad Virtual, en el que el jugador
+                            tiene
+                            que deslizarse por una pista esquivando obstáculos mientras obtiene monedas.
+                            Eventualmente, con esas monedas podrá elegir entre comprar mejoras de jugabilidad o
+                            invertir ese dinero para generar más para próximas ofertas de mejoras.</p>
+                    </div>
+                </div>
+            </div>
             <!-- Proyecto 1 -->
             <div class="flip-card" onclick="this.classList.toggle('flipped');">
                 <div class="flip-card-inner">
@@ -97,7 +153,7 @@
                             SteamVR.
                         </p>
                         <a href="https://www.youtube.com/watch?v=KblvhjPxJmw" class="trailer-link" target="_blank">Ver
-                            Trailer</a>
+                            Vídeo</a>
                     </div>
                 </div>
             </div>
@@ -126,18 +182,7 @@
             <!-- Añade más proyectos aquí -->
         </div>
 
-        <div class="sobre-mi" id="sobre-mi" style="display: none;">
-            <p id="sobre-mi-text">Hola, soy Adrián Montero, un desarrollador de videojuegos con experiencia en la
-                creación de proyectos innovadores y desafiantes. Me apasiona el diseño de juegos y el desarrollo de
-                nuevas tecnologías. Aquí puedes conocer más sobre mi carrera y mis habilidades.</p>
-        </div>
 
-        <div class="contacto" id="contacto" style="display: none;">
-            <p id="contacto-text">Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a
-                    href="mailto:adrimonteroc@gmail.com">adrimonteroc@gmail.com</a>. También puedes conectar conmigo a
-                través de <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/"
-                    target="_blank">LinkedIn</a>.</p>
-        </div>
     </div>
 
     </div>

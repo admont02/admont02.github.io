@@ -107,6 +107,23 @@ header .categorias a {
 header .categorias a.activo {
     color: #000;
 }
+.texto-arriba {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.texto-arriba h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.texto-arriba p {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
 
 /* ------------------------- */
 /* Grid */
