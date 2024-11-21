@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="estilos.css">
-    <title>Portfolio Dinámico - Adrián Montero</title>
+    <title>Portfolio - Adrián Montero</title>
 </head>
+
 <body>
     <div class="contenedor">
         <header>
@@ -25,7 +27,8 @@
                 <a href="http://www.twitter.com/falconmasters" target="_blank" class="twitter">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/" target="_blank" class="linkedin">
+                <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/" target="_blank"
+                    class="linkedin">
                     <i class="fab fa-linkedin"></i>
                 </a>
                 <a href="https://github.com/admont02" target="_blank" class="github">
@@ -39,46 +42,91 @@
             </div>
         </header>
 
-        <div class="contenido" id="contenido">
+        <div class="grid" id="grid"></div>
             <div class="grid" id="grid">
                 <!-- Proyecto 1 -->
-                <div class="item">
-                    <div class="item-contenido">
-                        <img src="path/to/project-image1.jpg" alt="Proyecto 1">
-                        <div class="item-info">
-                            <h3>Proyecto 1</h3>
-                            <p>Descripción breve del proyecto 1. Explica qué es, sus características y su objetivo.</p>
-                            <a href="link-al-trailer1" class="trailer-link" target="_blank">Ver Tráiler</a>
-                            <a href="link-al-proyecto1" class="proyecto-link" target="_blank">Ver Proyecto</a>
-                        </div>
+            
+            <!-- Proyecto 1 -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped');">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/accesibilidad.png" alt="Proyecto 1">
+                        <h3>Herramienta de Accesibilidad Visual para personas con problemas auditivos</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="back-text">Fui participe del desarrollo de una herramienta de accesibilidad visual
+                            destinada a mejorar
+                            la experiencia de juego de personas con dificultades auditivas. Esta herramienta ofrece una
+                            solución mediante la implementación de indicadores visuales en juegos 3D desarrollados en
+                            Unity. Los indicadores permiten a los jugadores percibir sonidos importantes del juego a
+                            través de señales visuales configurables en color, tamaño, vibración e iconos
+                            personalizados, asegurando así una experiencia de juego más inclusiva</p>
+                        <a href="link-al-trailer1" class="trailer-link" target="_blank">Ver Tráiler</a>
+                        <a href="link-al-proyecto1" class="proyecto-link" target="_blank">Ver Proyecto</a>
                     </div>
                 </div>
-        
-                <!-- Proyecto 2 -->
-                <div class="item">
-                    <div class="item-contenido">
-                        <img src="path/to/project-image2.jpg" alt="Proyecto 2">
-                        <div class="item-info">
-                            <h3>Proyecto 2</h3>
-                            <p>Descripción breve del proyecto 2. Explica qué es, sus características y su objetivo.</p>
-                            <a href="link-al-trailer2" class="trailer-link" target="_blank">Ver Tráiler</a>
-                            <a href="link-al-proyecto2" class="proyecto-link" target="_blank">Ver Proyecto</a>
-                        </div>
+            </div>
+            <!-- Proyecto 1 -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped');">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/monkey.png" alt="Proyecto 1">
+                        <h3>Monkey Delivery</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="back-text">Monkey Delivery es un videojuego 2D desarrollado en SDL C++. El juego te
+                            pone en la piel de Monkey, un simpático mono que se ha trasladado al pueblo de Todesfall
+                            para trabajar como repartidor de paquetes. Tu objetivo es entregar los pedidos a los
+                            distintos vecinos del pueblo, mientras gestionas tu nivel de sueño y evitas a los enemigos
+                            que te acechan. A medida que avances en el juego, podrás comprar objetos y materiales en las
+                            tiendas para mejorar tu equipamiento y tu rendimiento. Además, irás conociendo a los
+                            habitantes de Todesfall y descubriendo el misterio que se esconde tras su aparente
+                            tranquilidad.</p>
+                        <a href="link-al-trailer1" class="trailer-link" target="_blank">Ver Web</a>
+                        <a href="link-al-proyecto1" class="proyecto-link" target="_blank">Ver Repositorio</a>
                     </div>
                 </div>
-        
-                <!-- Añade más proyectos aquí -->
             </div>
-        
-            <div class="sobre-mi" id="sobre-mi" style="display: none;">
-                <p id="sobre-mi-text">Hola, soy Adrián Montero, un desarrollador de videojuegos con experiencia en la creación de proyectos innovadores y desafiantes. Me apasiona el diseño de juegos y el desarrollo de nuevas tecnologías. Aquí puedes conocer más sobre mi carrera y mis habilidades.</p>
+            <!-- Proyecto 1 -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped');">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/monkey.png" alt="Proyecto 1">
+                        <h3>Monkey Delivery</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="back-text">Monkey Delivery es un videojuego 2D desarrollado en SDL C++. El juego te
+                            pone en la piel de Monkey, un simpático mono que se ha trasladado al pueblo de Todesfall
+                            para trabajar como repartidor de paquetes. Tu objetivo es entregar los pedidos a los
+                            distintos vecinos del pueblo, mientras gestionas tu nivel de sueño y evitas a los enemigos
+                            que te acechan. A medida que avances en el juego, podrás comprar objetos y materiales en las
+                            tiendas para mejorar tu equipamiento y tu rendimiento. Además, irás conociendo a los
+                            habitantes de Todesfall y descubriendo el misterio que se esconde tras su aparente
+                            tranquilidad.</p>
+                        <a href="link-al-trailer1" class="trailer-link" target="_blank">Ver Web</a>
+                        <a href="link-al-proyecto1" class="proyecto-link" target="_blank">Ver Repositorio</a>
+                    </div>
+                </div>
             </div>
-        
-            <div class="contacto" id="contacto" style="display: none;">
-                <p id="contacto-text">Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a href="mailto:adrimonteroc@gmail.com">adrimonteroc@gmail.com</a>. También puedes conectar conmigo a través de <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/" target="_blank">LinkedIn</a>.</p>
-            </div>
+
+
+            <!-- Añade más proyectos aquí -->
         </div>
-        
+
+        <div class="sobre-mi" id="sobre-mi" style="display: none;">
+            <p id="sobre-mi-text">Hola, soy Adrián Montero, un desarrollador de videojuegos con experiencia en la
+                creación de proyectos innovadores y desafiantes. Me apasiona el diseño de juegos y el desarrollo de
+                nuevas tecnologías. Aquí puedes conocer más sobre mi carrera y mis habilidades.</p>
+        </div>
+
+        <div class="contacto" id="contacto" style="display: none;">
+            <p id="contacto-text">Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a
+                    href="mailto:adrimonteroc@gmail.com">adrimonteroc@gmail.com</a>. También puedes conectar conmigo a
+                través de <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/"
+                    target="_blank">LinkedIn</a>.</p>
+        </div>
+    </div>
+
     </div>
 
     <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
@@ -86,4 +134,5 @@
     <script src="main.js"></script>
     <script src="traduccion.js"></script> <!-- Archivo de traducción -->
 </body>
+
 </html>
