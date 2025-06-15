@@ -121,6 +121,25 @@ body {
     padding: 15px 0;
     z-index: 1000;
 }
+/* Contenedor de los botones */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Estilo de los botones */
+.social-buttons a img {
+    width: 40px; /* Ajusta el tamaño del icono */
+    height: auto;
+    transition: transform 0.3s;
+}
+
+/* Efecto al pasar el cursor */
+.social-buttons a img:hover {
+    transform: scale(1.2);
+}
 
 
 
