@@ -9,6 +9,7 @@ body {
 /* Encabezado */
 header {
     padding: 60px;
+    margin-top: 80px;
     background: linear-gradient(135deg, #0073e6, #004b99);
     color: white;
     border-radius: 10px;
@@ -27,7 +28,7 @@ header {
 
 /* Menú de navegación */
 nav {
-    margin-top: 30px;
+    margin-top: 0px;
 }
 
 .menu {
@@ -58,7 +59,7 @@ section {
     padding: 80px 20px;
     margin: 50px 0;
     border-radius: 10px;
-    background: rgba(0, 115, 230, 0.05);
+    background: rgba(11, 15, 18, 0.05);
 }
 .flip-card-front img {
     width: 40%; /* Reduce el tamaño al 80% del contenedor */
@@ -100,6 +101,161 @@ section {
 @keyframes blink {
   0%, 100% { border-color: transparent; }
   50% { border-color: #0073e6; }
+}
+/* Estilos generales */
+body {
+    background-color: rgba(0, 245, 37, 0.05);
+    color: #333333;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+/* Barra de navegación fija */
+/* Barra de navegación fija ocupando todo el ancho */
+.fixed-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #0073e6;
+    padding: 15px 0;
+    z-index: 1000;
+}
+
+
+
+
+/* Centrar los elementos del menú */
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40;
+    padding: 40;
+}
+
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.menu li a:hover {
+    background: #005bb5;
+    border-radius: 5px;
+}
+
+/* Animación de desplazamiento suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Espaciado de secciones */
+section {
+    padding: 100px 20px;
+    margin: 50px 0;
+    border-radius: 10px;
+}
+/* Ajuste de los títulos en los proyectos */
+.flip-card-front h3 {
+    font-size: 1.8rem; /* Aumenta el tamaño del título */
+    font-weight: bold;
+    color: #0073e6;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Ajuste en el texto de descripción de los proyectos */
+/* Ajustar margen lateral en los textos de los proyectos */
+.flip-card-back p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 15px;
+    margin-left: 120px; /* Margen a la izquierda */
+    margin-right: 120px; /* Margen a la derecha */
+    color: #333;
+}
+
+
+/* Botones en los proyectos */
+.proyecto-link, .trailer-link {
+    display: inline-block;
+    font-size: 1.3rem;
+    padding: 12px 18px;
+    margin-top: 15px;
+    background: #0073e6;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.proyecto-link:hover, .trailer-link:hover {
+    background: #005bb5;
+    transform: scale(1.1);
+}
+/* Unificar estilos de texto en Sobre Mí, Contacto y Proyectos */
+#contacto p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    text-align: justify;
+    max-width: 600px; /* Contacto con un ancho más ajustado */
+    margin: 20px auto;
+    padding: 15px;
+}
+#sobre-mi p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    text-align: justify;
+    max-width: 800px; /* Sobre Mí con un ancho más amplio */
+    margin: 20px auto;
+    padding: 10px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+input, textarea {
+    font-size: 1rem;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px;
+    font-size: 1.2rem;
+    background: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #005bb5;
+    transform: scale(1.05);
 }
 
 

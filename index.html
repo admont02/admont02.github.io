@@ -4,53 +4,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adrián Montero - Sobre Mí</title>
+    <title>Adrián Montero - Portafolio</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
+<header>
+    <div class="animated-name">
+        <h1><span id="typing-name"></span></h1>
+    </div>
+    <h3 id="description-text">Desarrollador de Videojuegos</h3>
+    <div class="social-buttons">
+        <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/" target="_blank" class="linkedin-button">
+            <img src="img/linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/adrimontero" target="_blank" class="github-button">
+            <img src="img/github.png" alt="GitHub">
+        </a>
+    </div>
+    <nav class="fixed-menu">
+        <ul class="menu">
+            <li><a href="#sobre-mi">Sobre Mí</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
 
 <body>
-    <div class="contenedor">
-        <header>
-            <div class="animated-name">
-                <h1><span id="typing-name"></span></h1>
+
+
+    <section id="sobre-mi">
+        <h2>Sobre Mí</h2>
+        <p>¡Hola! Soy Adrián, un apasionado desarrollador de videojuegos buscando una oportunidad en la industria.</p>
+        <p>Tengo experiencia con <strong>Unity</strong>, <strong>Unreal Engine</strong>, <strong>Phaser</strong>, y
+            <strong>SDL</strong>. Además, trabajé en proyectos de <strong>Realidad Virtual (VR)</strong>.</p>
+    </section>
+
+    <section id="proyectos">
+        <h2>Proyectos Destacados</h2>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>TeoriKart - Trabajo de Fin de Grado</h3>
+                    <img src="img/vr.png" alt="TeoriKart">
+
+                </div>
+                <div class="flip-card-back">
+                    <p>x</p>
+                </div>
             </div>
-            <h3 id="description-text">Desarrollador de software</h3>
-            <nav>
-                <ul class="menu">
-                    <li><a href="index.html">Sobre Mí</a></li>
-                    <li><a href="proyectos.html">Proyectos</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-        </header>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Juego en RV - ViewNext</h3>
+                    <img src="img/vr.png" alt="Proyecto de RV">
 
-        <section>
-             <p>¡Hola! Soy Adrián, un apasionado desarrollador de videojuegos buscando una oportunidad en la
-                            industria.
-                        </p>
+                </div>
+                <div class="flip-card-back">
+                    <p>Durante mi estancia de 6 meses en ViewNext trabajé en un proyecto que
+                        consistió en un juego Endless-Runner/Rogue-Like en Realidad Virtual, en el que el jugador
+                        tiene
+                        que deslizarse por una pista esquivando obstáculos mientras obtiene monedas.
+                        Eventualmente, con esas monedas podrá elegir entre comprar mejoras de jugabilidad o
+                        invertir ese dinero para generar más para próximas ofertas de mejoras.</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Herramienta de Accesibilidad Visual</h3>
+                    <img src="img/accesibilidad.png" alt="Proyecto de accesibilidad">
 
-                        <p>Tengo experiencia especialmente con <strong>Unity</strong>, pero también he trabajado con
-                            <strong>Unreal Engine</strong> en varios proyectos. Además, he tenido la oportunidad de
-                            trabajar durante 6 meses en un proyecto de <strong>Realidad Virtual (VR)</strong>, lo que me
-                            ha permitido mejorar mi conocimiento en este ámbito. También
-                            tengo experiencia con <strong>Phaser</strong> y <strong>SDL</strong>, herramientas que he
-                            utilizado para crear juegos 2D y desarrollar mecánicas interactivas.
-                        </p>
+                </div>
+                <div class="flip-card-back">
+                    <p>Fui participe del desarrollo de una herramienta de accesibilidad visual
+                        destinada a mejorar
+                        la experiencia de juego de personas con dificultades auditivas. Esta herramienta ofrece una
+                        solución mediante la implementación de indicadores visuales en juegos 3D desarrollados en
+                        Unity. Los indicadores permiten a los jugadores percibir sonidos importantes del juego a
+                        través de señales visuales configurables en color, tamaño, vibración e iconos
+                        personalizados, asegurando así una experiencia de juego más inclusiva</p>
+                    <a href="https://github.com/Agusmoure/Uaj23-24" class="proyecto-link" target="_blank">Ver
+                        Repositorio</a>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Monkey Delivery</h3>
+                    <img src="img/monkey.png" alt="Proyecto de monkey">
 
+                </div>
+                <div class="flip-card-back">
+                    <p>Monkey Delivery es un videojuego 2D desarrollado en SDL C++. El juego te
+                        pone en la piel de Monkey, un simpático mono que se ha trasladado al pueblo de Todesfall
+                        para trabajar como repartidor de paquetes. Tu objetivo es entregar los pedidos a los
+                        distintos vecinos del pueblo, mientras gestionas tu nivel de sueño y evitas a los enemigos
+                        que te acechan. A medida que avances en el juego, podrás comprar objetos y materiales en las
+                        tiendas para mejorar tu equipamiento y tu rendimiento. Además, irás conociendo a los
+                        habitantes de Todesfall y descubriendo el misterio que se esconde tras su aparente
+                        tranquilidad.</p>
+                    <a href="https://miggon23.github.io/MonkeyDelivery/" class="trailer-link" target="_blank">Ver
+                        Web</a>
+                    <a href="https://github.com/miggon23/MonkeyDelivery" class="proyecto-link" target="_blank">Ver
+                        Repositorio</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        <p>Mi experiencia también se extiende al uso de <strong>Blender</strong>, donde he modelado y
-                            animado personajes, objetos y entornos 3D, dándoles vida a través de texturas y animaciones
-                            que mejoran la experiencia de usuario. (Aunque prefiero programar!)</p>
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a
+                href="mailto:adrimonteroc@gmail.com">adrimonteroc@gmail.com</a>.</p>
+        <p>También puedes conectar conmigo en <a
+                href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/"
+                target="_blank">LinkedIn</a>.</p>
+        <form action="mailto:adrimonteroc@gmail.com" method="post" enctype="text/plain">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
 
-                        <p>Estoy constantemente tratando de aprender cosas nuevas y mejorando mis habilidades. Me
-                            considero una persona que trabaja bien en equipo y bajo presión.</p>
-        </section>
-    </div>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+
+    </section>
 
     <script>
         const text = "Adrián Montero";
         const typingEl = document.getElementById("typing-name");
         let i = 0;
+        let isDeleting = false;
 
         function typeEffect() {
             if (i < text.length) {
