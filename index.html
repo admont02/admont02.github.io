@@ -1,42 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Adrián Montero - Sobre Mí</title>
     <link rel="stylesheet" href="estilos.css">
-    <title>Portfolio - Adrián Montero</title>
 </head>
 
 <body>
     <div class="contenedor">
         <header>
-            <!-- <div class="idiomas">
-                <button id="btn-es"><img src="/img/espana.png" alt="Español" title="Español"></button>
-                <button id="btn-en"><img src="/img/uk.png" alt="English" title="English"></button>
-            </div> -->
-            <div class="logo">
-                <h1 id="logo-text">Adrián Montero</h1>
-                <h3>adrimonteroc@gmail.com</h3>
-                <p id="description-text">Desarrollador de videojuegos</p>
+            <div class="animated-name">
+                <h1><span id="typing-name"></span></h1>
             </div>
-            <div class="redes-sociales-header">
-                <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/" target="_blank"
-                    class="linkedin">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/admont02" target="_blank" class="github">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-            <div class="grid" id="grid">
-                <div class="grid" id="grid">
-                    <div class="texto-arriba">
-                        <p>¡Hola! Soy Adrián, un apasionado desarrollador de videojuegos buscando una oportunidad en la
+            <h3 id="description-text">Desarrollador de software</h3>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Sobre Mí</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+             <p>¡Hola! Soy Adrián, un apasionado desarrollador de videojuegos buscando una oportunidad en la
                             industria.
                         </p>
 
@@ -55,141 +44,31 @@
 
                         <p>Estoy constantemente tratando de aprender cosas nuevas y mejorando mis habilidades. Me
                             considero una persona que trabaja bien en equipo y bajo presión.</p>
-
-                        <p>Aquí puedes ver algunos de los proyectos en los que he trabajado. ¡Haz clic en
-                            ellos para conocer más!</p>
-                    </div>
-                </div>
-        </header>
-
-        <div class="grid" id="grid">
-            <div class="sobre-mi" id="sobre-mi" style="display: none;">
-                <p id="sobre-mi-text">Hola, soy Adrián Montero, un desarrollador de videojuegos con experiencia en la
-                    creación de proyectos innovadores y desafiantes. Me apasiona el diseño de juegos y el desarrollo de
-                    nuevas tecnologías. Aquí puedes conocer más sobre mi carrera y mis habilidades.</p>
-            </div>
-
-            <div class="contacto" id="contacto" style="display: none;">
-                <p id="contacto-text">Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a
-                        href="mailto:adrimonteroc@gmail.com">adrimonteroc@gmail.com</a>. También puedes conectar conmigo
-                    a
-                    través de <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-castrillo-83678b279/"
-                        target="_blank">LinkedIn</a>.</p>
-            </div>
-        </div>
-        <div class="grid" id="grid">
-            <div class="grid" id="grid">
-
-            </div>
-
-            <!-- Proyecto 1 -->
-            <div class="flip-card" onclick="this.classList.toggle('flipped');">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="img/vr.png" alt="Proyecto 1">
-                        <h3>Juego en RV durante mi estancia en ViewNext</h3>
-                    </div>
-                    <div class="flip-card-back">
-                        <p class="back-text">Durante mi estancia de 6 meses en ViewNext trabajé en un proyecto que
-                            consistió en un juego Endless-Runner/Rogue-Like en Realidad Virtual, en el que el jugador
-                            tiene
-                            que deslizarse por una pista esquivando obstáculos mientras obtiene monedas.
-                            Eventualmente, con esas monedas podrá elegir entre comprar mejoras de jugabilidad o
-                            invertir ese dinero para generar más para próximas ofertas de mejoras.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Proyecto 1 -->
-            <div class="flip-card" onclick="this.classList.toggle('flipped');">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="img/accesibilidad.png" alt="Proyecto 1">
-                        <h3>Herramienta de Accesibilidad Visual para personas con problemas auditivos</h3>
-                    </div>
-                    <div class="flip-card-back">
-                        <p class="back-text">Fui participe del desarrollo de una herramienta de accesibilidad visual
-                            destinada a mejorar
-                            la experiencia de juego de personas con dificultades auditivas. Esta herramienta ofrece una
-                            solución mediante la implementación de indicadores visuales en juegos 3D desarrollados en
-                            Unity. Los indicadores permiten a los jugadores percibir sonidos importantes del juego a
-                            través de señales visuales configurables en color, tamaño, vibración e iconos
-                            personalizados, asegurando así una experiencia de juego más inclusiva</p>
-                        <a href="https://github.com/Agusmoure/Uaj23-24" class="proyecto-link" target="_blank">Ver Repositorio</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Proyecto 1 -->
-            <div class="flip-card" onclick="this.classList.toggle('flipped');">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="img/monkey.png" alt="Proyecto 1">
-                        <h3>Monkey Delivery</h3>
-                    </div>
-                    <div class="flip-card-back">
-                        <p class="back-text">Monkey Delivery es un videojuego 2D desarrollado en SDL C++. El juego te
-                            pone en la piel de Monkey, un simpático mono que se ha trasladado al pueblo de Todesfall
-                            para trabajar como repartidor de paquetes. Tu objetivo es entregar los pedidos a los
-                            distintos vecinos del pueblo, mientras gestionas tu nivel de sueño y evitas a los enemigos
-                            que te acechan. A medida que avances en el juego, podrás comprar objetos y materiales en las
-                            tiendas para mejorar tu equipamiento y tu rendimiento. Además, irás conociendo a los
-                            habitantes de Todesfall y descubriendo el misterio que se esconde tras su aparente
-                            tranquilidad.</p>
-                        <a href="https://miggon23.github.io/MonkeyDelivery/" class="trailer-link" target="_blank">Ver Web</a>
-                        <a href="https://github.com/miggon23/MonkeyDelivery" class="proyecto-link" target="_blank">Ver Repositorio</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Proyecto 3 -->
-            <div class="flip-card" onclick="this.classList.toggle('flipped');">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="img/bolos.png" alt="Proyecto 1">
-                        <h3>Disco-Bolera en Realidad Virtual</h3>
-                    </div>
-                    <div class="flip-card-back">
-                        <p class="back-text">Este juego que se basa en una bolera-discoteca fue mi primer acercamiento
-                            al mundo de la Realidad Virtual. Se llevó a cabo en Unity, utilizando unas Oculus Quest 2 y
-                            SteamVR.
-                        </p>
-                        <a href="https://www.youtube.com/watch?v=KblvhjPxJmw" class="trailer-link" target="_blank">Ver
-                            Vídeo</a>
-                    </div>
-                </div>
-            </div>
-            <div class="flip-card" onclick="this.classList.toggle('flipped');">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="img/makt.png" alt="Proyecto 1">
-                        <h3>Makt Fange</h3>
-                    </div>
-                    <div class="flip-card-back">
-                        <p class="back-text">Makt Fange se trata del primer juego en el que participé en la universidad.
-                            Es un juego de Acción-Aventura con plataformas estilo Scroll
-                            lateral, donde el protagonista trata de escapar de la prisión tras el estallido de
-                            una revuelta por parte de los presos. Según avance el juego, el jugador descubrirá que
-                            escapar de dicha prisión era sólo el comienzo de su aventura, y que deberá seguir abriéndose
-                            paso por el escenario ayudándose de la esfera de hierro que tiene anclada al pie mientras
-                            derrota a los enemigos con la misma. En ningún momento el jugador podrá desprenderse de la
-                            herropea, así que tendrá que lidiar con lo que arrastrar una bola superpesada supone.
-                        </p>
-                        <a href="https://www.youtube.com/watch?v=dnlyOfhRMmw" class="trailer-link" target="_blank">Ver
-                            Trailer</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Añade más proyectos aquí -->
-        </div>
-
-
+        </section>
     </div>
 
-    </div>
+    <script>
+        const text = "Adrián Montero";
+        const typingEl = document.getElementById("typing-name");
+        let i = 0;
 
-    <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
-    <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
-    <script src="main.js"></script>
-    <script src="traduccion.js"></script> <!-- Archivo de traducción -->
+        function typeEffect() {
+            if (i < text.length) {
+                typingEl.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeEffect, 100);
+            } else {
+                // Después de 10 segundos, reiniciar
+                setTimeout(() => {
+                    typingEl.innerHTML = '';
+                    i = 0;
+                    typeEffect();
+                }, 10000);
+            }
+        }
+
+        window.onload = typeEffect;
+    </script>
 </body>
 
 </html>
