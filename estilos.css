@@ -270,5 +270,210 @@ button:hover {
     background: #005bb5;
     transform: scale(1.05);
 }
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  padding: 40px 0;
+}
+
+.proyecto {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.proyecto:hover {
+  transform: translateY(-5px);
+}
+
+.proyecto img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.proyecto h3 {
+  font-size: 1.4rem;
+  color: #0073e6;
+  margin-bottom: 10px;
+}
+
+.proyecto p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.proyecto a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #0073e6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.proyecto a:hover {
+  text-decoration: underline;
+}
+.proyecto {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0px; /* Espaciado entre elementos internos */
+}
+
+.proyecto img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px; /* Espaciado bajo la imagen */
+}
+
+.proyecto h3 {
+  margin: 10px 0 5px 0;
+  font-size: 1.3rem;
+  color: #0073e6;
+}
+
+.proyecto p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Máximo 3 columnas */
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tecnologias {
+  display: flex;
+  gap: 12px;
+  margin: 0px 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tecnologias img {
+  width: 46px;
+  height: auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.tecnologias img:hover {
+  transform: scale(1.2);
+}
 
 
+.proyecto p:nth-of-type(2) {
+  margin-top: 20px; /* o el valor que te guste */
+}
+.botones-proyecto {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.botones-proyecto a {
+  padding: 10px 20px;
+  background-color: #0073e6;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.botones-proyecto a:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px);
+}
+#skills-map {
+  padding: 100px 20px;
+  text-align: center;
+  background: #f4f7fa;
+}
+
+#skills-map h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #0073e6;
+}
+
+.skills-orbita {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.nodo-central {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #0073e6;
+  color: white;
+  font-weight: bold;
+  padding: 20px 30px;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(0, 115, 230, 0.5);
+}
+
+.orbita {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  animation: girar 20s linear infinite;
+  transform-origin: center center;
+}
+
+.skill-nodo {
+  position: absolute;
+  width: 80px;
+  text-align: center;
+}
+
+.skill-nodo img {
+  width: 48px;
+  height: auto;
+  margin-bottom: 5px;
+  transition: transform 0.3s ease;
+}
+
+.skill-nodo span {
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.skill-nodo:hover img {
+  transform: scale(1.2);
+}
+
+/* Posicionamiento de los nodos en círculo */
+.skill-nodo:nth-child(1) { top: 0%; left: 50%; transform: translate(-50%, 0); }
+.skill-nodo:nth-child(2) { top: 20%; left: 85%; transform: translate(-50%, -50%); }
+.skill-nodo:nth-child(3) { top: 80%; left: 85%; transform: translate(-50%, -50%); }
+.skill-nodo:nth-child(4) { top: 100%; left: 50%; transform: translate(-50%, -100%); }
+.skill-nodo:nth-child(5) { top: 80%; left: 15%; transform: translate(-50%, -50%); }
+
+/* Animación circular */
+@keyframes girar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
