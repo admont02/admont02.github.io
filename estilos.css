@@ -412,68 +412,46 @@ button:hover {
   margin-bottom: 40px;
   color: #0073e6;
 }
-
-.skills-orbita {
-  position: relative;
-  width: 400px;
-  height: 400px;
-  margin: 0 auto;
+#skills-map p {
+   font-size: 1.4rem;
+    line-height: 1.8;
+    text-align: justify;
+    max-width: 800px; /* Sobre Mí con un ancho más amplio */
+    margin: 20px auto;
+    padding: 10px;
+}
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
-.nodo-central {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #0073e6;
-  color: white;
-  font-weight: bold;
-  padding: 20px 30px;
-  border-radius: 50%;
-  z-index: 2;
-  box-shadow: 0 0 15px rgba(0, 115, 230, 0.5);
-}
-
-.orbita {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0; left: 0;
-  animation: girar 20s linear infinite;
-  transform-origin: center center;
-}
-
-.skill-nodo {
-  position: absolute;
-  width: 80px;
+.skill-item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 120px;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.skill-nodo img {
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.skill-item img {
   width: 48px;
   height: auto;
-  margin-bottom: 5px;
-  transition: transform 0.3s ease;
+  margin-bottom: 10px;
 }
 
-.skill-nodo span {
-  font-size: 0.8rem;
+.skill-item span {
+  display: block;
+  font-size: 0.9rem;
   color: #333;
+  font-weight: 500;
 }
 
-.skill-nodo:hover img {
-  transform: scale(1.2);
-}
-
-/* Posicionamiento de los nodos en círculo */
-.skill-nodo:nth-child(1) { top: 0%; left: 50%; transform: translate(-50%, 0); }
-.skill-nodo:nth-child(2) { top: 20%; left: 85%; transform: translate(-50%, -50%); }
-.skill-nodo:nth-child(3) { top: 80%; left: 85%; transform: translate(-50%, -50%); }
-.skill-nodo:nth-child(4) { top: 100%; left: 50%; transform: translate(-50%, -100%); }
-.skill-nodo:nth-child(5) { top: 80%; left: 15%; transform: translate(-50%, -50%); }
-
-/* Animación circular */
-@keyframes girar {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
