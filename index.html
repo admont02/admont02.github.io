@@ -1,388 +1,219 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adrián Montero - Portfolio</title>
+    <title>Adrián Montero | Game Developer</title>
     <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
-<header>
-    <div class="animated-name">
-        <h1><span id="typing-name"></span></h1>
-    </div>
-    <h3 id="description-text">Desarrollador de Videojuegos</h3>
-    <div class="social-buttons">
-        <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-83678b279/" target="_blank" class="linkedin-button">
-            <img src="img/linkedin.png" alt="LinkedIn">
-        </a>
-        <a href="https://github.com/admont02" target="_blank" class="github-button">
-            <img src="img/github.png" alt="GitHub">
-        </a>
-    </div>
+<body>
+    <!-- HUD del minijuego -->
+    <div id="game-hud">Naves enemigas: <span id="score-val">0</span> / 5</div>
+
+    <!-- Fondo interactivo simulando un entorno 3D/Partículas y minijuego -->
+    <canvas id="game-canvas"></canvas>
 
     <nav class="fixed-menu">
         <ul class="menu">
+            <li><a href="#hero">Inicio</a></li>
             <li><a href="#sobre-mi">Sobre Mí</a></li>
-            <li><a href="#skills-map">Skills</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#publicaciones">Publicaciones</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
-</header>
 
-<body>
-    <section id="sobre-mi">
-
-
-        <h2 class="section-title">Sobre Mí</h2>
-        <div class="section-divider"></div>
-        <p>¡Hola! Soy Adrián, graduado en Desarrollo de Videojuegos por la Universidad Complutense de Madrid.
-            Actualmente estoy realizando prácticas como Desarrollador Software en Endesa
-            y estudiando un Máster en Gestión Organizacional, Competencias Clave y Analítica de Datos en la Universidad
-            Camilo José
-            Cela
-        </p>
-
-        <p>
-            Mi pasión por los videojuegos desde niño me motivó a estudiar la carrera para aprender a desarrollarlos
-            desde dentro. A lo largo de la formación descubrí me entusiasma es la programación en todos los ámbitos,
-            tanto aplicada al desarrollo de videojuegos como al software en general. Mis principales puntos fuertes son
-            la programación en C++ y C#, así como el trabajo con motores como Unity y Unreal Engine.
-        </p>
-
-        </p>
-
-        <p>Me caracterizo por mi capacidad para trabajar en equipo, tomar la iniciativa y desempeñarme eficazmente bajo
-            presión. Además, me apasiona el aprendizaje continuo y siempre busco nuevas formas de mejorar mis
-            habilidades.</p>
-
-        <div class="section-divider"></div>
-        <h3 class="section-subtitle">Experiencia</h3>
-
-        <ol class="timeline">
-            <!-- Experiencia -->
-            <li>
-                <div class="dot">🎮</div>
-                <div class="tl-body">
-                    <h4 class="tl-title">Endesa — Desarrollador de Software</h4>
-                    <div class="tl-meta">dic 2025 — actualidad</div>
-                    <p class="tl-desc">
-                        Desarrollo de experiencias en el motor Unity, tanto 3D como VR. Creación de tours virtuales en
-                        el software 3DVista con tareas de modelado en Blender.
-                    </p>
+    <main class="contenedor">
+        <header id="hero" class="seccion">
+            <div class="hero-content">
+                <div class="glitch-wrapper">
+                    <h1 class="glitch" data-text="Adrián Montero">Adrián Montero</h1>
                 </div>
-            </li>
-            <li>
-                <div class="dot">🎮</div>
-                <div class="tl-body">
-                    <h4 class="tl-title">ViewNext — Desarrollador Unity (VR)</h4>
-                    <div class="tl-meta">feb 2024 — jul 2024</div>
-                    <p class="tl-desc">
-                        Colaboré en el desarrollo de proyectos de realidad virtual orientados al usuario final,
-                        principalmente para dispositivos Oculus Quest 2, 3 y Pro. Participé en la creación de escenas y
-                        el desarrollo de interacciones en Unity, además de brindar apoyo en tareas de modelado 3D
-                        utilizando Blender.
-                    </p>
-                </div>
-            </li>
-
-
-        </ol>
-        <ol class="timeline"></ol>
-        <ol class="timeline">
-            <h3 class="section-subtitle">Educación</h3>
-            <!-- Educación -->
-            <li>
-                <div class="dot">🎓</div>
-                <div class="tl-body">
-                    <h4 class="tl-title">UCM — Grado en Desarrollo de Videojuegos</h4>
-                    <div class="tl-meta"> sep 2020 — mayo 2025</div>
-                    <p class="tl-desc">
-
-                    </p>
-                </div>
-            </li>
-            <ol class="timeline"></ol>
-
-
-            <div class="botones-proyecto">
-                <a href="img/accesibilidad.png" target="_blank">Ver Repositorio</a>
-            </div>
-
-
-
-
-
-    </section>
-    <section id="skills-map">
-
-
-        <h2 class="section-title">Skills</h2>
-        <div class="section-divider"></div>
-
-
-
-        <p>Estas son algunas de mis habilidades, incluyendo lenguajes de programación, entornos de desarrollo y otras
-            tecnologías que domino.</p>
-        <div class="skills-grid">
-
-            <div class="skill-item">
-                <img src="img/cpp.png" alt="C++">
-                <span>C++</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/csharp.png" alt="C#">
-                <span>C#</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/vs.png" alt="Unity">
-                <span>Visual Studio</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/code.png" alt="Unity">
-                <span>Visual Studio Code</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/unity.png" alt="Unity">
-                <span>Unity</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/unreal.png" alt="Unity">
-                <span>Unreal Engine</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/sdl.png" alt="Unity">
-                <span>SDL</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/java.png" alt="Unity">
-                <span>Java</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/android.png" alt="Unity">
-                <span>Android Studio</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/js.png" alt="Unity">
-                <span>JavaScript</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/phaser.png" alt="Unity">
-                <span>Phaser</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/python.png" alt="Unity">
-                <span>Python</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/jupyter.png" alt="Unity">
-                <span>Jupyter Notebook</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/ogre.png" alt="Unity">
-                <span>Ogre</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/opengl.png" alt="Unity">
-                <span>open GL</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/solidity.png" alt="Unity">
-                <span>Solidity</span>
-            </div>
-            <div class="skill-item">
-                <img src="img/physx.png" alt="Unity">
-                <span>PhysX</span>
-            </div>
-            <!-- Puedes añadir más habilidades aquí -->
-
-        </div>
-        <p>
-            Aunque conozco bastantes lenguajes, aquellos en los que tengo más experiencia y conocimientos son
-            <strong>C++</strong> y <strong>C#</strong>, en ámbitos como la
-            Programación Orientada a Objetos (POO), el uso de estructuras de datos y algoritmos, manejo de memoria,
-            depuración y pruebas, trabajo con archivos, uso de librerías
-            externas, y diseño modular del código.
-        </p>
-        <p>
-            Estoy familiarizado con entornos de desarrollo colaborativos, siguiendo la metodología
-            ágil <strong>Scrum</strong> y utilizando <strong>GitHub</strong> como sistema de control de versiones. Esto
-            me ha permitido desarrollar
-            proyectos de forma organizada, gestionar ramas y commits de manera eficiente, y colaborar activamente
-            mediante pull requests y seguimiento de issues.
-        </p>
-
-
-
-    </section>
-
-
-
-
-    <section id="proyectos">
-
-        <h2 class="section-title">Proyectos destacados</h2>
-        <div class="section-divider"></div>
-
-        <div class="proyectos-grid">
-            <div class="proyecto">
-                <img src="img/Imagen1.png" alt="TeoriKart">
-                <h3>TeoriKart - Trabajo de Fin de Grado</h3>
-                <div class="tecnologias">
-                    <img src="img/unity.png" alt="Unity">
-                    <img src="img/csharp.png" alt="C#">
-                    <img src="img/jupyter.png" alt="Jupyter">
-                    <img src="img/python.png" alt="Python">
-                </div>
-                <p>
-                    Este Trabajo de Fin de Grado consiste en un videojuego serio, con el objetivo de crear una
-                    herramienta complementaria para ayudar a los estudiantes a prepararse para el examen teórico, de una
-                    manera divertida. También se realizan pruebas con usuarios y se analizan los datos recogidos para
-                    evaluar en qué medida el juego contribuye a mejorar el proceso de aprendizaje de los estudiantes.
-                </p>
-            </div>
-
-            <div class="proyecto">
-                <img src="img/vr.png" alt="Juego en RV">
-                <h3>Juego en RV - ViewNext</h3>
-                <div class="tecnologias">
-                    <img src="img/unity.png" alt="Unity">
-                    <img src="img/csharp.png" alt="C#">
-                </div>
-
-                <p>Durante mi estancia de 6 meses en ViewNext trabajé en un proyecto que
-                    consistió en un juego Endless-Runner/Rogue-Like en Realidad Virtual, en el que el jugador
-                    tiene
-                    que deslizarse por una pista esquivando obstáculos mientras obtiene monedas.
-                </p>
-                <p>
-                    Eventualmente, con esas monedas podrá elegir entre comprar mejoras de jugabilidad o
-                    invertir ese dinero para generar más para próximas ofertas de mejoras.</p>
-            </div>
-
-            <div class="proyecto">
-                <img src="img/accesibilidad.png" alt="Accesibilidad Visual">
-                <h3>Herramienta de Accesibilidad Visual</h3>
-                <div class="tecnologias">
-                    <img src="img/unity.png" alt="Unity">
-                    <img src="img/csharp.png" alt="C#">
-                </div>
-                <p>Fui participe del desarrollo de una herramienta de accesibilidad visual
-                    destinada a mejorar
-                    la experiencia de juego de personas con dificultades auditivas. Esta herramienta ofrece una
-                    solución mediante la implementación de indicadores visuales en juegos 3D desarrollados en
-                    Unity. Los indicadores permiten a los jugadores percibir sonidos importantes del juego a
-                    través de señales visuales configurables en color, tamaño, vibración e iconos
-                    personalizados, asegurando así una experiencia de juego más inclusiva</p>
-                <div class="botones-proyecto">
-                    <a href="https://github.com/Agusmoure/Uaj23-24" target="_blank">Ver Repositorio</a>
+                <h2 id="typing-name" class="subtitle-code"></h2>
+                <div class="social-buttons">
+                    <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-83678b279/" target="_blank" class="btn-gamedev">
+                        <span class="btn-text">LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/admont02" target="_blank" class="btn-gamedev">
+                        <span class="btn-text">GitHub</span>
+                    </a>
                 </div>
             </div>
+        </header>
 
-            <div class="proyecto">
-                <img src="img/monkey.png" alt="Monkey Delivery">
-                <h3>Flamingo-Motor propio en C++</h3>
-                <div class="tecnologias">
-                    <img src="img/cpp.png" alt="Unity">
-                    <img src="img/sdl.png" alt="C#">
+        <section id="sobre-mi" class="seccion glass-panel">
+            <h2 class="section-title">&lt;Sobre_Mí /&gt;</h2>
+            <div class="text-content">
+                <p>Graduado en <strong>Desarrollo de Videojuegos</strong> por la UCM. Combino mi pasión por el diseño de mecánicas y la programación gráfica con una visión sólida del software empresarial. Actualmente formo parte del equipo de desarrollo en Endesa, y curso un Máster en Gestión Organizacional y Analítica de Datos.</p>
+                <p>Me caracterizo por mi capacidad para trabajar en equipo, tomar la iniciativa y desempeñarme eficazmente bajo presión. Además, me apasiona el aprendizaje continuo y siempre busco nuevas formas de mejorar mis habilidades.</p>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Endesa — Desarrollador de Software</h3>
+                        <span class="date">Dic 2025 — Actualidad</span>
+                        <p>Desarrollo de experiencias en el motor Unity, tanto 3D como VR. Creación de tours virtuales en el software 3DVista con tareas de modelado en Blender.</p>
+                    </div>
                 </div>
-                <p>Pendiente
-                </p>
-                <div class="botones-proyecto">
-                    <a href="https://miggon23.github.io/MonkeyDelivery/" target="_blank">Ver Web</a>
-                    <a href="https://github.com/miggon23/MonkeyDelivery" target="_blank">Ver Repositorio</a>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>ViewNext — Desarrollador Unity (VR)</h3>
+                        <span class="date">Feb 2024 — Jul 2024</span>
+                        <p>Colaboré en el desarrollo de proyectos de realidad virtual orientados al usuario final, principalmente para dispositivos Oculus Quest 2, 3 y Pro. Desarrollo de interacciones en Unity y apoyo en modelado 3D.</p>
+                    </div>
                 </div>
             </div>
-            <div class="proyecto">
-                <img src="img/monkey.png" alt="Monkey Delivery">
-                <h3>Monkey Delivery</h3>
-                <div class="tecnologias">
-                    <img src="img/cpp.png" alt="Unity">
-                    <img src="img/sdl.png" alt="C#">
+        </section>
+
+        <section id="skills" class="seccion">
+            <h2 class="section-title">&lt;Tech_Stack /&gt;</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><img src="img/cpp.png" alt="C++"><span>C++</span></div>
+                <div class="skill-item"><img src="img/csharp.png" alt="C#"><span>C#</span></div>
+                <div class="skill-item"><img src="img/vs.png" alt="Visual Studio"><span>Visual Studio</span></div>
+                <div class="skill-item"><img src="img/code.png" alt="VS Code"><span>VS Code</span></div>
+                <div class="skill-item"><img src="img/unity.png" alt="Unity"><span>Unity</span></div>
+                <div class="skill-item"><img src="img/unreal.png" alt="Unreal Engine"><span>Unreal Engine</span></div>
+                <div class="skill-item"><img src="img/sdl.png" alt="SDL"><span>SDL</span></div>
+                <div class="skill-item"><img src="img/java.png" alt="Java"><span>Java</span></div>
+                <div class="skill-item"><img src="img/android.png" alt="Android Studio"><span>Android Studio</span></div>
+                <div class="skill-item"><img src="img/js.png" alt="JavaScript"><span>JavaScript</span></div>
+                <div class="skill-item"><img src="img/phaser.png" alt="Phaser"><span>Phaser</span></div>
+                <div class="skill-item"><img src="img/python.png" alt="Python"><span>Python</span></div>
+                <div class="skill-item"><img src="img/jupyter.png" alt="Jupyter"><span>Jupyter Notebook</span></div>
+                <div class="skill-item"><img src="img/ogre.png" alt="Ogre"><span>Ogre</span></div>
+                <div class="skill-item"><img src="img/opengl.png" alt="open GL"><span>open GL</span></div>
+                <div class="skill-item"><img src="img/solidity.png" alt="Solidity"><span>Solidity</span></div>
+                <div class="skill-item"><img src="img/physx.png" alt="PhysX"><span>PhysX</span></div>
+            </div>
+            <p style="margin-top: 2rem; color: var(--text-muted); text-align: center;">Aunque conozco bastantes lenguajes, aquellos en los que tengo más experiencia son <strong>C++ y C#</strong> (POO, estructuras de datos, manejo de memoria y diseño modular), trabajando siempre bajo metodologías ágiles (Scrum) y control de versiones (GitHub).</p>
+        </section>
+
+        <section id="proyectos" class="seccion">
+            <h2 class="section-title">&lt;Proyectos /&gt;</h2>
+            <div class="proyectos-grid">
+                
+                <div class="proyecto-card">
+                    <img src="img/Imagen1.png" alt="TeoriKart" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3>TeoriKart - TFG</h3>
+                        <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Python</span><span class="tag">Jupyter</span></div>
+                        <p>Videojuego serio para ayudar a estudiantes a prepararse el examen teórico de conducir de manera divertida. Análisis de datos con usuarios para evaluar la mejora en el aprendizaje.</p>
+                    </div>
                 </div>
-                <p>Monkey Delivery es un videojuego 2D desarrollado en SDL C++. El juego te
-                    pone en la piel de Monkey, un simpático mono que se ha trasladado al pueblo de Todesfall
-                    para trabajar como repartidor de paquetes. Tu objetivo es entregar los pedidos a los
-                    distintos vecinos del pueblo, mientras gestionas tu nivel de sueño y evitas a los enemigos
-                    que te acechan. A medida que avances en el juego, podrás comprar objetos y materiales en las
-                    tiendas para mejorar tu equipamiento y tu rendimiento. Además, irás conociendo a los
-                    habitantes de Todesfall y descubriendo el misterio que se esconde tras su aparente
-                    tranquilidad.
-                </p>
-                <div class="botones-proyecto">
-                    <a href="https://miggon23.github.io/MonkeyDelivery/" target="_blank">Ver Web</a>
-                    <a href="https://github.com/miggon23/MonkeyDelivery" target="_blank">Ver Repositorio</a>
+
+                <div class="proyecto-card">
+                    <img src="img/vr.png" alt="Juego en RV" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3>Juego en RV - ViewNext</h3>
+                        <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">VR</span></div>
+                        <p>Endless-Runner/Rogue-Like en VR. El jugador esquiva obstáculos y obtiene monedas para comprar mejoras de jugabilidad e invertir en su economía dentro del juego.</p>
+                    </div>
+                </div>
+
+                <div class="proyecto-card">
+                    <img src="img/accesibilidad.png" alt="Accesibilidad Visual" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3>Herramienta Accesibilidad</h3>
+                        <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span></div>
+                        <p>Solución mediante indicadores visuales configurables en juegos 3D. Permite percibir sonidos importantes a personas con dificultades auditivas.</p>
+                        <div class="botones-proyecto"><a href="https://github.com/Agusmoure/Uaj23-24" target="_blank">Repositorio</a></div>
+                    </div>
+                </div>
+
+                <div class="proyecto-card">
+                    <img src="img/monkey.png" alt="Monkey Delivery" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3>Monkey Delivery</h3>
+                        <div class="tags"><span class="tag">C++</span><span class="tag">SDL</span></div>
+                        <p>Videojuego 2D. Eres Monkey, un mono repartidor de paquetes. Gestiona tu sueño, evita enemigos, mejora equipamiento y descubre el misterio del pueblo de Todesfall.</p>
+                        <div class="botones-proyecto">
+                            <a href="https://miggon23.github.io/MonkeyDelivery/" target="_blank">Web</a>
+                            <a href="https://github.com/miggon23/MonkeyDelivery" target="_blank">Repositorio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proyecto-card">
+                    <img src="img/monkey.png" alt="Flamingo Motor" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3>Flamingo-Motor Propio</h3>
+                        <div class="tags"><span class="tag">C++</span><span class="tag">SDL</span></div>
+                        <p>Desarrollo de un motor de videojuegos propio desde cero.</p>
+                        <div class="botones-proyecto">
+                            <a href="https://miggon23.github.io/MonkeyDelivery/" target="_blank">Web</a>
+                            <a href="https://github.com/miggon23/MonkeyDelivery" target="_blank">Repositorio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proyecto-card">
+                    <img src="img/monkey.png" alt="Good Nightmare Sweetie" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3>Good Nightmare Sweetie</h3>
+                        <div class="tags"><span class="tag">JavaScript</span><span class="tag">Phaser</span></div>
+                        <p>Proyecto web interactivo y divertido programado en Phaser (Pendiente de más info).</p>
+                        <div class="botones-proyecto">
+                            <a href="https://miggon23.github.io/MonkeyDelivery/" target="_blank">Web</a>
+                            <a href="https://github.com/miggon23/MonkeyDelivery" target="_blank">Repositorio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proyecto-card">
+                    <img src="img/monkey.png" alt="Makt Fange" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3>Makt Fange</h3>
+                        <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span></div>
+                        <p>Desarrollo en Unity (Pendiente de más info).</p>
+                        <div class="botones-proyecto">
+                            <a href="https://miggon23.github.io/MonkeyDelivery/" target="_blank">Web</a>
+                            <a href="https://github.com/miggon23/MonkeyDelivery" target="_blank">Repositorio</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="publicaciones" class="seccion">
+            <h2 class="section-title">&lt;Últimas_Publicaciones /&gt;</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: var(--text-muted);">Un vistazo a lo que comparto en mi red profesional.</p>
+            
+            <div class="proyectos-grid" style="align-items: start;">
+                <!-- POST 1: Sustituye el enlace src por el de tu publicación -->
+                <div class="glass-panel" style="padding: 10px;">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7487453478777294850?collapsed=1" height="669" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+                </div>
+
+                <!-- POST 2: Sustituye el enlace src por el de tu publicación -->
+                <div class="glass-panel" style="padding: 10px;">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7456826249571622912?collapsed=1" height="669" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
                 </div>
             </div>
-            <div class="proyecto">
-                <img src="img/monkey.png" alt="Monkey Delivery">
-                <h3>Good Nightmare Sweetie</h3>
-                <div class="tecnologias">
-                    <img src="img/js.png" alt="Unity">
-                    <img src="img/phaser.png" alt="C#">
-                </div>
-                <p>Pendiente
-                </p>
-                <div class="botones-proyecto">
-                    <a href="https://miggon23.github.io/MonkeyDelivery/" target="_blank">Ver Web</a>
-                    <a href="https://github.com/miggon23/MonkeyDelivery" target="_blank">Ver Repositorio</a>
-                </div>
+        </section>
+
+        <section id="contacto" class="seccion glass-panel">
+            <h2 class="section-title">&lt;Contacto /&gt;</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">¿Buscas un perfil técnico que entienda tanto de arquitectura de software como de *game feel*? ¡Hablemos!</p>
+            <div class="botones-contacto" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="mailto:adrimonteroc@gmail.com" class="btn-gamedev lg">
+                    📩 Correo: adrimonteroc@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-83678b279/" target="_blank" class="btn-gamedev lg">
+                    💼 Conectar en LinkedIn
+                </a>
             </div>
-            <div class="proyecto">
-                <img src="img/monkey.png" alt="Monkey Delivery">
-                <h3>Makt Fange</h3>
-                <div class="tecnologias">
-                    <img src="img/unity.png" alt="Unity">
-                    <img src="img/csharp.png alt=" C#">
-                </div>
-                <p>Pendiente
-                </p>
-                <div class="botones-proyecto">
-                    <a href="https://miggon23.github.io/MonkeyDelivery/" target="_blank">Ver Web</a>
-                    <a href="https://github.com/miggon23/MonkeyDelivery" target="_blank">Ver Repositorio</a>
-                </div>
-            </div>
+        </section>
+    </main>
 
-        </div>
-    </section>
+    <div id="easter-egg-toast">¡CÓDIGO KONAMI ACTIVADO! 🚀 Modo Dios Desbloqueado.</div>
 
-
-    <section id="contacto">
-
-        <h2 class="section-title">Contacto</h2>
-        <div class="section-divider"></div>
-
-        <p>Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a
-                href="mailto:adrimonteroc@gmail.com">adrimonteroc@gmail.com</a>.</p>
-        <p>También puedes conectar conmigo en <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-83678b279/"
-                target="_blank">LinkedIn</a>.</p>
-
-    </section>
-
-    <script>
-        const text = "Adrián Montero";
-        const typingEl = document.getElementById("typing-name");
-        let i = 0;
-        let isDeleting = false;
-
-        function typeEffect() {
-            if (i < text.length) {
-                typingEl.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeEffect, 100);
-            } else {
-                // Después de 10 segundos, reiniciar
-                setTimeout(() => {
-                    typingEl.innerHTML = '';
-                    i = 0;
-                    typeEffect();
-                }, 10000);
-            }
-        }
-
-        window.onload = typeEffect;
-    </script>
+    <script src="main.js"></script>
 </body>
-
 </html>
