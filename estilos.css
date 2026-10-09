@@ -209,3 +209,119 @@ h1, h2, h3, .subtitle-code { font-family: 'Fira Code', monospace; }
     .proyectos-grid { grid-template-columns: 1fr; }
     #game-hud { top: auto; bottom: 20px; left: 20px; font-size: 0.8rem; }
 }
+/* Contenedor específico para posts de LinkedIn */
+.linkedin-wrapper {
+    background: #ffffff; /* Fondo blanco para que se camufle con el post */
+    border-radius: 12px; /* Bordes redondeados suaves */
+    overflow: hidden; /* Fundamental: esto evita que el iframe se salga del cuadro */
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.linkedin-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 204, 0.2);
+    border-color: var(--primary);
+}
+
+.linkedin-wrapper iframe {
+    width: 100%;
+    height: 700px; /* Altura ideal para posts con imágenes o código */
+    border: none;
+    display: block;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .linkedin-wrapper iframe {
+        height: 600px; 
+    }
+}
+/* Restringir el canvas solo a la cabecera */
+/* Canvas global de partículas */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2; /* Al fondo del todo */
+    pointer-events: none; /* No bloquea los clics en la web */
+}
+
+/* Restringir el canvas del juego solo a la cabecera */
+#hero {
+    position: relative;
+    overflow: hidden; 
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+/* El contenido del texto por encima del juego */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    pointer-events: none; /* Para que el texto no bloquee los clics a las naves */
+}
+
+.hero-content .social-buttons {
+    pointer-events: auto; /* Para poder hacer clic en tus botones de Github/Linkedin */
+}
+
+/* El contador de naves */
+#game-hud {
+    position: absolute;
+    top: 80px; 
+    left: 20px;
+    background: rgba(0,0,0,0.7);
+    border: 1px solid var(--primary);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    color: var(--primary);
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Arreglo definitivo del cartel de victoria (Toast) para móviles */
+#easter-egg-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 150px); /* Empujado hacia abajo con transform (más seguro) */
+    opacity: 0;
+    visibility: hidden; /* Totalmente invisible e inactivo por defecto */
+    background: var(--primary);
+    color: var(--bg-dark); /* Texto oscuro para que lea bien sobre el cyan */
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    font-weight: bold;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1000;
+    box-shadow: 0 0 30px rgba(0, 255, 204, 0.5);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+#easter-egg-toast.show {
+    transform: translate(-50%, 0); /* Vuelve a su posición original */
+    opacity: 1;
+    visibility: visible;
+}

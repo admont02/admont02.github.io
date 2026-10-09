@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. EFECTO MAQUINA DE ESCRIBIR
+    // ==========================================
+    // 1. EFECTO MÁQUINA DE ESCRIBIR
+    // ==========================================
     const textToType = "> Software Engineer & Game Developer_";
     const typingElement = document.getElementById('typing-name');
     let charIndex = 0;
@@ -19,38 +21,95 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    typingElement.textContent = "> ";
-    setTimeout(typeEffect, 500);
+    if (typingElement) {
+        typingElement.textContent = "> ";
+        setTimeout(typeEffect, 500);
+    }
 
-    // 2. FONDO INTERACTIVO & MINIJUEGO (PARTÍCULAS + NAVES)
-    const canvas = document.getElementById('game-canvas');
-    const ctx = canvas.getContext('2d');
+    // ==========================================
+    // 2. FUNCIÓN DE VICTORIA (Definida arriba para evitar errores)
+    // ==========================================
+    let victoriaActivada = false;
+    function activarVictoria() {
+        if (victoriaActivada) return; // Evitar que se ejecute varias veces
+        victoriaActivada = true;
+
+        const toast = document.getElementById('easter-egg-toast');
+        if (toast) {
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 5000);
+        }
+    }
+
+    // ==========================================
+    // 3. CONFIGURACIÓN DE LOS CANVAS
+    // ==========================================
     
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    // Canvas de partículas (Fondo Global)
+    const bgCanvas = document.getElementById('bg-canvas');
+    const bgCtx = bgCanvas ? bgCanvas.getContext('2d') : null;
     
+    function resizeBgCanvas() {
+        if (bgCanvas) {
+            bgCanvas.width = window.innerWidth;
+            bgCanvas.height = window.innerHeight;
+        }
+    }
+    resizeBgCanvas();
+
+    // Canvas del Minijuego (Solo Hero)
+    const hero = document.getElementById('hero');
+    const gameCanvas = document.getElementById('game-canvas');
+    const gameCtx = gameCanvas ? gameCanvas.getContext('2d') : null;
+    
+    function resizeGameCanvas() {
+        if (gameCanvas && hero) {
+            gameCanvas.width = hero.clientWidth;
+            gameCanvas.height = hero.clientHeight;
+        }
+    }
+    resizeGameCanvas();
+
+    // Variables del juego
     let particlesArray = [];
     let spaceshipsArray = [];
     let destroyedShips = 0;
     const totalShips = 5;
     const scoreVal = document.getElementById('score-val');
-    let mouse = { x: null, y: null, radius: 100 };
+    let mouse = { x: null, y: null, radius: 120 }; // Hitbox de repulsión del ratón
+
+    // ==========================================
+    // 4. LISTENERS DE RATÓN Y VENTANA
+    // ==========================================
     
+    // Para las partículas globales (sigue al ratón en toda la web)
     window.addEventListener('mousemove', (event) => {
-        mouse.x = event.x;
-        mouse.y = event.y;
+        mouse.x = event.clientX;
+        mouse.y = event.clientY;
     });
 
+    window.addEventListener('mouseout', () => {
+        mouse.x = null;
+        mouse.y = null;
+    });
+
+    // Redimensionar al cambiar el tamaño de la ventana
     window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        resizeBgCanvas();
+        resizeGameCanvas();
+        initParticles(); // Reiniciamos partículas para cubrir nueva resolución
     });
 
-    // Clase Partícula (Fondo ambiental)
+    // ==========================================
+    // 5. CLASES DE ENTIDADES (Partículas y Naves)
+    // ==========================================
+
     class Particle {
         constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
+            this.x = Math.random() * bgCanvas.width;
+            this.y = Math.random() * bgCanvas.height;
             this.size = Math.random() * 2 + 1;
             this.baseX = this.x;
             this.baseY = this.y;
@@ -58,24 +117,24 @@ document.addEventListener('DOMContentLoaded', () => {
             this.color = Math.random() > 0.5 ? '#00ffcc' : '#b052ff';
         }
         draw() {
-            ctx.fillStyle = this.color;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.closePath();
-            ctx.fill();
+            if (!bgCtx) return;
+            bgCtx.fillStyle = this.color;
+            bgCtx.beginPath();
+            bgCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            bgCtx.closePath();
+            bgCtx.fill();
         }
         update() {
             let dx = mouse.x - this.x;
             let dy = mouse.y - this.y;
             let distance = Math.sqrt(dx * dx + dy * dy);
-            let forceDirectionX = dx / distance;
-            let forceDirectionY = dy / distance;
-            let maxDistance = mouse.radius;
-            let force = (maxDistance - distance) / maxDistance;
-            let directionX = forceDirectionX * force * this.density;
-            let directionY = forceDirectionY * force * this.density;
-
-            if (distance < mouse.radius) {
+            
+            if (mouse.x !== null && distance < mouse.radius) {
+                let forceDirectionX = dx / distance;
+                let forceDirectionY = dy / distance;
+                let force = (mouse.radius - distance) / mouse.radius;
+                let directionX = forceDirectionX * force * this.density;
+                let directionY = forceDirectionY * force * this.density;
                 this.x -= directionX;
                 this.y -= directionY;
             } else {
@@ -86,149 +145,133 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Clase Nave Enemiga (El Minijuego)
     class Spaceship {
         constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.vx = (Math.random() - 0.5) * 3; // Velocidad X
-            this.vy = (Math.random() - 0.5) * 3; // Velocidad Y
-            this.radius = 20; // Radio de hit
+            this.x = Math.random() * gameCanvas.width;
+            this.y = Math.random() * gameCanvas.height;
+            this.vx = (Math.random() - 0.5) * 3; 
+            this.vy = (Math.random() - 0.5) * 3; 
+            this.radius = 20; 
             this.color = '#ff0055';
             this.isDestroyed = false;
         }
         draw() {
-            if(this.isDestroyed) return;
-
-            // Calcular rotación según la dirección
+            if (this.isDestroyed || !gameCtx) return;
+            
             let angle = Math.atan2(this.vy, this.vx);
             
-            ctx.save();
-            ctx.translate(this.x, this.y);
-            ctx.rotate(angle);
+            gameCtx.save();
+            gameCtx.translate(this.x, this.y);
+            gameCtx.rotate(angle);
             
-            // Dibujar nave estilo vector/asteroids
-            ctx.strokeStyle = this.color;
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.moveTo(15, 0);     // Morro
-            ctx.lineTo(-10, -10);  // Ala izquierda
-            ctx.lineTo(-5, 0);     // Parte trasera
-            ctx.lineTo(-10, 10);   // Ala derecha
-            ctx.closePath();
-            ctx.stroke();
-
-            // Dibujar un halo neón
-            ctx.shadowBlur = 10;
-            ctx.shadowColor = this.color;
-            ctx.stroke();
+            gameCtx.strokeStyle = this.color;
+            gameCtx.lineWidth = 2;
+            gameCtx.shadowBlur = 10;
+            gameCtx.shadowColor = this.color;
             
-            ctx.restore();
+            gameCtx.beginPath();
+            gameCtx.moveTo(15, 0);     
+            gameCtx.lineTo(-10, -10);  
+            gameCtx.lineTo(-5, 0);     
+            gameCtx.lineTo(-10, 10);   
+            gameCtx.closePath();
+            gameCtx.stroke();
+            
+            gameCtx.restore();
         }
         update() {
-            if(this.isDestroyed) return;
-
+            if (this.isDestroyed) return;
             this.x += this.vx;
             this.y += this.vy;
 
-            // Rebotar en los bordes
-            if (this.x + this.radius > canvas.width || this.x - this.radius < 0) this.vx = -this.vx;
-            if (this.y + this.radius > canvas.height || this.y - this.radius < 0) this.vy = -this.vy;
+            // Físicas corregidas para evitar bucles en los bordes
+            if (this.x + this.radius > gameCanvas.width) {
+                this.x = gameCanvas.width - this.radius;
+                this.vx *= -1;
+            } else if (this.x - this.radius < 0) {
+                this.x = this.radius;
+                this.vx *= -1;
+            }
+
+            if (this.y + this.radius > gameCanvas.height) {
+                this.y = gameCanvas.height - this.radius;
+                this.vy *= -1;
+            } else if (this.y - this.radius < 0) {
+                this.y = this.radius;
+                this.vy *= -1;
+            }
 
             this.draw();
-            
         }
     }
 
-    // Listener de clics ("Disparar")
-    // Listener de clics ("Disparar") en toda la ventana
-    window.addEventListener('click', (event) => {
-        const clickX = event.clientX;
-        const clickY = event.clientY;
+    // ==========================================
+    // 6. MECÁNICA DE DISPARO
+    // ==========================================
+    if (hero) {
+        hero.addEventListener('click', (event) => {
+            const rect = hero.getBoundingClientRect();
+            const clickX = event.clientX - rect.left;
+            const clickY = event.clientY - rect.top;
 
-        spaceshipsArray.forEach(ship => {
-            if (!ship.isDestroyed) {
-                // Comprobar colisión por distancia (círculo)
-                const dist = Math.sqrt(Math.pow(clickX - ship.x, 2) + Math.pow(clickY - ship.y, 2));
-                
-                // Multiplicamos el radio por 3 para que la hitbox sea más generosa y fácil de acertar
-                if (dist < ship.radius * 3) { 
-                    ship.isDestroyed = true;
-                    destroyedShips++;
-                    scoreVal.innerText = destroyedShips;
+            spaceshipsArray.forEach(ship => {
+                if (!ship.isDestroyed) {
+                    const dist = Math.sqrt(Math.pow(clickX - ship.x, 2) + Math.pow(clickY - ship.y, 2));
+                    
+                    if (dist < ship.radius * 3) { // Hitbox amplia para ser justo
+                        ship.isDestroyed = true;
+                        destroyedShips++;
+                        if (scoreVal) scoreVal.innerText = destroyedShips;
 
-                    // Si destruyes todas...
-                    if (destroyedShips === totalShips) {
-                        activarModoDios();
-                        const hud = document.getElementById('game-hud');
-                        hud.innerHTML = "¡SECTOR DESPEJADO!";
-                        hud.style.color = '#ffea00';
-                        hud.style.borderColor = '#ffea00';
+                        if (destroyedShips === totalShips) {
+                            activarVictoria();
+                            const hud = document.getElementById('game-hud');
+                            if (hud) {
+                                hud.innerHTML = "¡SECTOR DESPEJADO!";
+                                hud.style.color = '#00ffcc';
+                                hud.style.borderColor = '#00ffcc';
+                                hud.style.background = 'rgba(0, 255, 204, 0.1)';
+                            }
+                        }
                     }
                 }
-            }
+            });
         });
-    });
+    }
 
-    function init() {
+    // ==========================================
+    // 7. BUCLE DE JUEGO (GAME LOOP)
+    // ==========================================
+    function initParticles() {
         particlesArray = [];
-        spaceshipsArray = [];
-        
-        let numberOfParticles = (canvas.width * canvas.height) / 9000;
+        if (!bgCanvas) return;
+        let numberOfParticles = (bgCanvas.width * bgCanvas.height) / 8000;
         for (let i = 0; i < numberOfParticles; i++) {
             particlesArray.push(new Particle());
         }
+    }
 
+    function init() {
+        initParticles();
+        spaceshipsArray = [];
         for (let i = 0; i < totalShips; i++) {
             spaceshipsArray.push(new Spaceship());
         }
     }
 
     function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Limpiar canvas en cada fotograma
+        if (bgCtx && bgCanvas) bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+        if (gameCtx && gameCanvas) gameCtx.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
         
+        // Actualizar entidades
         for (let i = 0; i < particlesArray.length; i++) particlesArray[i].update();
         for (let i = 0; i < spaceshipsArray.length; i++) spaceshipsArray[i].update();
         
         requestAnimationFrame(animate);
     }
     
+    // Iniciar todo
     init();
     animate();
-
-    // 3. EASTER EGG CLÁSICO (Teclado) por si alguien hace la secuencia
-    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-    let konamiIndex = 0;
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key.toLowerCase() === konamiCode[konamiIndex].toLowerCase()) {
-            konamiIndex++;
-            if (konamiIndex === konamiCode.length) {
-                activarModoDios();
-                konamiIndex = 0;
-            }
-        } else {
-            konamiIndex = 0;
-        }
-    });
-
-    let diosActivado = false;
-    function activarModoDios() {
-        if (diosActivado) return; // Evitar dispararlo varias veces
-        diosActivado = true;
-
-        const toast = document.getElementById('easter-egg-toast');
-        toast.classList.add('show');
-        
-        // Cambiar paleta a colores más "agresivos/arcade"
-        document.documentElement.style.setProperty('--primary', '#ffea00'); 
-        document.documentElement.style.setProperty('--secondary', '#ff0055');
-        
-        // Hacer que las partículas restantes se vuelvan locas un rato
-        particlesArray.forEach(p => p.density = p.density * 5);
-
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 5000);
-    }
 });

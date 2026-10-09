@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adrián Montero | Game Developer</title>
     <link rel="stylesheet" href="estilos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;700;900&display=swap"
+        rel="stylesheet">
 </head>
-<body>
-    <!-- HUD del minijuego -->
-    <div id="game-hud">Naves enemigas: <span id="score-val">0</span> / 5</div>
 
-    <!-- Fondo interactivo simulando un entorno 3D/Partículas y minijuego -->
-    <canvas id="game-canvas"></canvas>
+<body>
+    <!-- 1. Fondo de partículas para TODA LA WEB -->
+    <canvas id="bg-canvas"></canvas>
 
     <nav class="fixed-menu">
         <ul class="menu">
@@ -26,14 +27,19 @@
     </nav>
 
     <main class="contenedor">
+        <!-- 2. El juego de las naves vive SOLO en este header -->
         <header id="hero" class="seccion">
+            <div id="game-hud">Naves enemigas: <span id="score-val">0</span> / 5</div>
+            <canvas id="game-canvas"></canvas> <!-- Canvas del juego -->
+
             <div class="hero-content">
                 <div class="glitch-wrapper">
                     <h1 class="glitch" data-text="Adrián Montero">Adrián Montero</h1>
                 </div>
                 <h2 id="typing-name" class="subtitle-code"></h2>
                 <div class="social-buttons">
-                    <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-83678b279/" target="_blank" class="btn-gamedev">
+                    <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-83678b279/" target="_blank"
+                        class="btn-gamedev">
                         <span class="btn-text">LinkedIn</span>
                     </a>
                     <a href="https://github.com/admont02" target="_blank" class="btn-gamedev">
@@ -43,20 +49,30 @@
             </div>
         </header>
 
+        <!-- Aquí sigue tu <section id="sobre-mi"> ... -->
+
+        <!-- Aquí sigue tu <section id="sobre-mi"> intacta... -->
+
         <section id="sobre-mi" class="seccion glass-panel">
             <h2 class="section-title">&lt;Sobre_Mí /&gt;</h2>
             <div class="text-content">
-                <p>Graduado en <strong>Desarrollo de Videojuegos</strong> por la UCM. Combino mi pasión por el diseño de mecánicas y la programación gráfica con una visión sólida del software empresarial. Actualmente formo parte del equipo de desarrollo en Endesa, y curso un Máster en Gestión Organizacional y Analítica de Datos.</p>
-                <p>Me caracterizo por mi capacidad para trabajar en equipo, tomar la iniciativa y desempeñarme eficazmente bajo presión. Además, me apasiona el aprendizaje continuo y siempre busco nuevas formas de mejorar mis habilidades.</p>
+                <p>Graduado en <strong>Desarrollo de Videojuegos</strong> por la UCM. Combino mi pasión por el diseño de
+                    mecánicas y la programación gráfica con una visión sólida del software empresarial. Actualmente
+                    formo parte del equipo de desarrollo en Endesa, y curso un Máster en Gestión Organizacional y
+                    Analítica de Datos.</p>
+                <p>Me caracterizo por mi capacidad para trabajar en equipo, tomar la iniciativa y desempeñarme
+                    eficazmente bajo presión. Además, me apasiona el aprendizaje continuo y siempre busco nuevas formas
+                    de mejorar mis habilidades.</p>
             </div>
-            
+
             <div class="timeline-container">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Endesa — Desarrollador de Software</h3>
                         <span class="date">Dic 2025 — Actualidad</span>
-                        <p>Desarrollo de experiencias en el motor Unity, tanto 3D como VR. Creación de tours virtuales en el software 3DVista con tareas de modelado en Blender.</p>
+                        <p>Desarrollo de experiencias en el motor Unity, tanto 3D como VR. Creación de tours virtuales
+                            en el software 3DVista con tareas de modelado en Blender.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -64,7 +80,9 @@
                     <div class="timeline-content">
                         <h3>ViewNext — Desarrollador Unity (VR)</h3>
                         <span class="date">Feb 2024 — Jul 2024</span>
-                        <p>Colaboré en el desarrollo de proyectos de realidad virtual orientados al usuario final, principalmente para dispositivos Oculus Quest 2, 3 y Pro. Desarrollo de interacciones en Unity y apoyo en modelado 3D.</p>
+                        <p>Colaboré en el desarrollo de proyectos de realidad virtual orientados al usuario final,
+                            principalmente para dispositivos Oculus Quest 2, 3 y Pro. Desarrollo de interacciones en
+                            Unity y apoyo en modelado 3D.</p>
                     </div>
                 </div>
             </div>
@@ -81,7 +99,8 @@
                 <div class="skill-item"><img src="img/unreal.png" alt="Unreal Engine"><span>Unreal Engine</span></div>
                 <div class="skill-item"><img src="img/sdl.png" alt="SDL"><span>SDL</span></div>
                 <div class="skill-item"><img src="img/java.png" alt="Java"><span>Java</span></div>
-                <div class="skill-item"><img src="img/android.png" alt="Android Studio"><span>Android Studio</span></div>
+                <div class="skill-item"><img src="img/android.png" alt="Android Studio"><span>Android Studio</span>
+                </div>
                 <div class="skill-item"><img src="img/js.png" alt="JavaScript"><span>JavaScript</span></div>
                 <div class="skill-item"><img src="img/phaser.png" alt="Phaser"><span>Phaser</span></div>
                 <div class="skill-item"><img src="img/python.png" alt="Python"><span>Python</span></div>
@@ -91,19 +110,25 @@
                 <div class="skill-item"><img src="img/solidity.png" alt="Solidity"><span>Solidity</span></div>
                 <div class="skill-item"><img src="img/physx.png" alt="PhysX"><span>PhysX</span></div>
             </div>
-            <p style="margin-top: 2rem; color: var(--text-muted); text-align: center;">Aunque conozco bastantes lenguajes, aquellos en los que tengo más experiencia son <strong>C++ y C#</strong> (POO, estructuras de datos, manejo de memoria y diseño modular), trabajando siempre bajo metodologías ágiles (Scrum) y control de versiones (GitHub).</p>
+            <p style="margin-top: 2rem; color: var(--text-muted); text-align: center;">Aunque conozco bastantes
+                lenguajes, aquellos en los que tengo más experiencia son <strong>C++ y C#</strong> (POO, estructuras de
+                datos, manejo de memoria y diseño modular), trabajando siempre bajo metodologías ágiles (Scrum) y
+                control de versiones (GitHub).</p>
         </section>
 
         <section id="proyectos" class="seccion">
             <h2 class="section-title">&lt;Proyectos /&gt;</h2>
             <div class="proyectos-grid">
-                
+
                 <div class="proyecto-card">
                     <img src="img/Imagen1.png" alt="TeoriKart" class="proyecto-img">
                     <div class="proyecto-info">
                         <h3>TeoriKart - TFG</h3>
-                        <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Python</span><span class="tag">Jupyter</span></div>
-                        <p>Videojuego serio para ayudar a estudiantes a prepararse el examen teórico de conducir de manera divertida. Análisis de datos con usuarios para evaluar la mejora en el aprendizaje.</p>
+                        <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span
+                                class="tag">Python</span><span class="tag">Jupyter</span></div>
+                        <p>Videojuego serio para ayudar a estudiantes a prepararse el examen teórico de conducir de
+                            manera divertida. Análisis de datos con usuarios para evaluar la mejora en el aprendizaje.
+                        </p>
                     </div>
                 </div>
 
@@ -111,8 +136,10 @@
                     <img src="img/vr.png" alt="Juego en RV" class="proyecto-img">
                     <div class="proyecto-info">
                         <h3>Juego en RV - ViewNext</h3>
-                        <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">VR</span></div>
-                        <p>Endless-Runner/Rogue-Like en VR. El jugador esquiva obstáculos y obtiene monedas para comprar mejoras de jugabilidad e invertir en su economía dentro del juego.</p>
+                        <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span
+                                class="tag">VR</span></div>
+                        <p>Endless-Runner/Rogue-Like en VR. El jugador esquiva obstáculos y obtiene monedas para comprar
+                            mejoras de jugabilidad e invertir en su economía dentro del juego.</p>
                     </div>
                 </div>
 
@@ -121,8 +148,10 @@
                     <div class="proyecto-info">
                         <h3>Herramienta Accesibilidad</h3>
                         <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span></div>
-                        <p>Solución mediante indicadores visuales configurables en juegos 3D. Permite percibir sonidos importantes a personas con dificultades auditivas.</p>
-                        <div class="botones-proyecto"><a href="https://github.com/Agusmoure/Uaj23-24" target="_blank">Repositorio</a></div>
+                        <p>Solución mediante indicadores visuales configurables en juegos 3D. Permite percibir sonidos
+                            importantes a personas con dificultades auditivas.</p>
+                        <div class="botones-proyecto"><a href="https://github.com/Agusmoure/Uaj23-24"
+                                target="_blank">Repositorio</a></div>
                     </div>
                 </div>
 
@@ -131,7 +160,8 @@
                     <div class="proyecto-info">
                         <h3>Monkey Delivery</h3>
                         <div class="tags"><span class="tag">C++</span><span class="tag">SDL</span></div>
-                        <p>Videojuego 2D. Eres Monkey, un mono repartidor de paquetes. Gestiona tu sueño, evita enemigos, mejora equipamiento y descubre el misterio del pueblo de Todesfall.</p>
+                        <p>Videojuego 2D. Eres Monkey, un mono repartidor de paquetes. Gestiona tu sueño, evita
+                            enemigos, mejora equipamiento y descubre el misterio del pueblo de Todesfall.</p>
                         <div class="botones-proyecto">
                             <a href="https://miggon23.github.io/MonkeyDelivery/" target="_blank">Web</a>
                             <a href="https://github.com/miggon23/MonkeyDelivery" target="_blank">Repositorio</a>
@@ -181,39 +211,54 @@
             </div>
         </section>
 
+
+        <!-- SECCIÓN DE PUBLICACIONES (IFRAMES REALES) -->
         <section id="publicaciones" class="seccion">
             <h2 class="section-title">&lt;Últimas_Publicaciones /&gt;</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: var(--text-muted);">Un vistazo a lo que comparto en mi red profesional.</p>
-            
+            <p style="text-align: center; margin-bottom: 2rem; color: var(--text-muted);">Un vistazo a lo que comparto
+                en mi red profesional.</p>
+
             <div class="proyectos-grid" style="align-items: start;">
-                <!-- POST 1: Sustituye el enlace src por el de tu publicación -->
-                <div class="glass-panel" style="padding: 10px;">
-                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7487453478777294850?collapsed=1" height="669" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+
+                <!-- POST 1 -->
+                <div class="linkedin-wrapper">
+                    <!-- Sustituye el enlace src por el de tu primera publicación -->
+                    <iframe
+                        src="https://www.linkedin.com/embed/feed/update/urn:li:share:7487453478777294850?collapsed=1"
+                        height="669" width="504" frameborder="0" allowfullscreen=""
+                        title="Publicación integrada"></iframe>
                 </div>
 
-                <!-- POST 2: Sustituye el enlace src por el de tu publicación -->
-                <div class="glass-panel" style="padding: 10px;">
-                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7456826249571622912?collapsed=1" height="669" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+                <!-- POST 2 -->
+                <div class="linkedin-wrapper">
+                    <!-- Sustituye el enlace src por el de tu segunda publicación -->
+                    <iframe
+                        src="https://www.linkedin.com/embed/feed/update/urn:li:share:7456826249571622912?collapsed=1"
+                        height="669" width="504" frameborder="0" allowfullscreen=""
+                        title="Publicación integrada"></iframe>
                 </div>
+
             </div>
         </section>
-
         <section id="contacto" class="seccion glass-panel">
             <h2 class="section-title">&lt;Contacto /&gt;</h2>
-            <p style="text-align: center; margin-bottom: 2rem;">¿Buscas un perfil técnico que entienda tanto de arquitectura de software como de *game feel*? ¡Hablemos!</p>
+            <p style="text-align: center; margin-bottom: 2rem;">¿Buscas un perfil técnico que entienda tanto de
+                arquitectura de software como de *game feel*? ¡Hablemos!</p>
             <div class="botones-contacto" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
                 <a href="mailto:adrimonteroc@gmail.com" class="btn-gamedev lg">
                     📩 Correo: adrimonteroc@gmail.com
                 </a>
-                <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-83678b279/" target="_blank" class="btn-gamedev lg">
+                <a href="https://www.linkedin.com/in/adri%C3%A1n-montero-83678b279/" target="_blank"
+                    class="btn-gamedev lg">
                     💼 Conectar en LinkedIn
                 </a>
             </div>
         </section>
     </main>
 
-    <div id="easter-egg-toast">¡CÓDIGO KONAMI ACTIVADO! 🚀 Modo Dios Desbloqueado.</div>
+    <div id="easter-egg-toast">¡Reflejos de auténtico Gamer! 🎮 Sector despejado.</div>
 
     <script src="main.js"></script>
 </body>
+
 </html>
